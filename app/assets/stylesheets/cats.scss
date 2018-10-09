@@ -1,0 +1,63 @@
+.cat-img {
+  height: 225px;
+  width: 98%;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.cat-row {
+  border: 1px solid black;
+}
+
+.cat-card {
+  margin-top: 10px;
+  width: 275px;
+  text-align: center;
+  border: 1px solid black;
+  margin-left: 10px;
+  margin-right: 10px;
+  min-height: 425px;
+
+  //background-image: image-url("catscatscats.jpg")
+}
+
+.cat-title {
+  background: rgba(255, 255, 255, 0);
+}
+
+.cat-flavor {
+  font-style: italic;
+  font-size: 12px;
+}
+
+.cat-gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cat-description {
+  font-size: 14px;
+
+}
+
+.tolerance {
+  width: 25px;
+  height: 25px
+}
+
+.cat-mechanics {
+  border-top: 1px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.cat-stats {
+  border-top: 1px solid black;
+  margin-left: 0px!important;
+  margin-right: 0px!important;
+  .col-6 {
+    border: 1px solid black;
+  }
+}

@@ -1,0 +1,29 @@
+%h1
+  HELLO KITTIES
+
+.cat-gallery
+  - @cats.each do |cat|
+    .cat-card
+      %h5.cat-title
+        = cat["title"]
+      %img.cat-img{src: cat["tile_image"]}
+      - if cat["tolerance"].present?
+        .cat-stats.row
+          .col-6
+            %span
+              = image_tag "tolerance.jpeg", class: 'tolerance'
+            %span
+              = cat["tolerance"]
+          .col-6
+            %span
+              = image_tag "coolcat.png", class: 'tolerance'
+            %span
+              = cat["points"]
+
+      .cat-mechanics
+        %h4.cat-description
+          - cat["description"].split("\n").each do |line|
+            %div
+              = line
+        %h7.cat-flavor
+          = cat["flavor"]
