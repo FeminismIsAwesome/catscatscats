@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b77dfc45-72f4-4236-8102-a486caf1dcb1" name="Default" comment="" />
+    <list default="true" id="b77dfc45-72f4-4236-8102-a486caf1dcb1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/.~lock.cats.csv#" afterPath="$PROJECT_DIR$/config/.~lock.cats.csv#" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/cats.csv" afterPath="$PROJECT_DIR$/config/cats.csv" />
+    </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -349,12 +352,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1539059247727</updated>
-      <workItem from="1539059249047" duration="3945000" />
+      <workItem from="1539059249047" duration="4505000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3945000" />
+    <option name="totallyTimeSpent" value="4505000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1438" height="828" extended-state="6" />
