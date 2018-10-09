@@ -22,7 +22,7 @@
 
       .cat-mechanics
         %h4.cat-description
-          - cat["description"].split("\n").each do |line|
+          - (cat["description"] || "").split("\n").each do |line|
             %div
               = line
         %h7.cat-flavor
