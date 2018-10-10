@@ -1,6 +1,8 @@
 %h1
   HELLO KITTIES
 
+  = link_to "da rules", "https://docs.google.com/document/d/1ONTHeYTsFVOLIQJIGger-aqo8Iq_IPk4aB7I5VOckX0/edit?usp=sharing", target: 'blank'
+
 .cat-gallery
   - @cats.each do |cat|
     .cat-card
@@ -9,16 +11,19 @@
       %img.cat-img{src: cat["tile_image"]}
       - if cat["tolerance"].present?
         .cat-stats.row
-          .col-6
+          .col-4
             %span
               = image_tag asset_path("tolerance.jpeg"), class: 'tolerance'
             %span
               = cat["tolerance"]
-          .col-6
+          .col-4
             %span
               = image_tag asset_path("coolcat.png"), class: 'tolerance'
             %span
               = cat["points"]
+          .col-4
+            %span
+              = cat["subtype"]
 
       .cat-mechanics
         %h4.cat-description
