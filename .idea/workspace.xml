@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b77dfc45-72f4-4236-8102-a486caf1dcb1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/cats.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/cats.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/cats/index.html.haml" afterPath="$PROJECT_DIR$/app/views/cats/index.html.haml" />
-    </list>
+    <list default="true" id="b77dfc45-72f4-4236-8102-a486caf1dcb1" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -32,8 +29,8 @@
       <file leaf-file-name="cats.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/cats.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="19">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -287,12 +284,12 @@
       <updated>1539059247727</updated>
       <workItem from="1539059249047" duration="5785000" />
       <workItem from="1539150633739" duration="1306000" />
-      <workItem from="1539283768021" duration="2743000" />
+      <workItem from="1539283768021" duration="2786000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9834000" />
+    <option name="totallyTimeSpent" value="9877000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1438" height="828" extended-state="6" />
@@ -555,8 +552,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/cats.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state relative-caret-position="19">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>
