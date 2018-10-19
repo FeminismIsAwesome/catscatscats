@@ -33,3 +33,50 @@
               = line
         %h7.cat-flavor
           = cat["flavor"]
+
+.row.rules-reference
+  .col-10
+    %h1
+      Quick Rules Reference
+    %h2
+      Start of Turn:
+    %h3
+      1): Either:
+    %ul
+      %li Play an action card from your hand
+      %li Discard a card from your hand
+    %h3
+      2): Pick one of these actions
+    %ul
+      %li Harass one cat with love, placing 2 annoyed tokens, or two cats for 1 each
+      %li Spend X-1 influence tokens, reduce X annoyed tokens from one cat
+      %li Gain 1 token of any kind, including influence, VP, and bid tokens.
+      %li Place a bid on a cat. This causes everyone to place a blind bid. Losing bids must still spend half of the influence, rounded down. Nobody wins ties.
+    %h3
+      3): If you have a cat with Perform: on it, you may annoy it by putting it on performance.
+    %h6
+      This means you put 2 annoyed tokens on it and gain its Perform effect. You cannot do this on a cat you won this round.
+    %h6
+      You may only do this to one cat per turn.
+
+  .col-10
+    %h1
+      Errata/FAQ
+    %h4
+      What happens if two Reaction cards are played at once?
+    %h6
+      Resolve them in order via first player token taking preference, if order matters.
+    %h4
+      What happens if I end a turn with no cards?
+    %h6
+      Skip the first phase, but you still get the second phase.
+
+.row.extra-tokens
+  .col-10
+    %h2
+      Extra Tokens 2 Print
+
+    .row
+      - (1..60).each do |num|
+        .col-1.number
+          = num

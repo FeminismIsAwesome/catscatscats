@@ -35,6 +35,21 @@
   flex-wrap: wrap;
 }
 
+.rules-reference {
+  margin: 20px;
+  border: 1px solid black;
+}
+
+.number {
+  font-size: 32px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.extra-tokens {
+  margin: 10px;
+}
+
 @media print {
   .cat-card {
     display: inline-block;
