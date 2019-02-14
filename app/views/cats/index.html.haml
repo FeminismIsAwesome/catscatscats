@@ -12,17 +12,17 @@
       %img.cat-img{src: cat["tile_image"]}
       - if cat["tolerance"].present?
         .cat-stats.row
-          .col-3
+          .col-4
             %span
               = image_tag asset_path("tolerance.jpeg"), class: 'tolerance'
             %span
               = cat["tolerance"]
-          .col-3
+          .col-4
             %span
               = image_tag asset_path("coolcat.png"), class: 'tolerance'
             %span
               = cat["points"]
-          .col-3
+          .col-4
             %span
               = cat["subtype"]
           - if @use_point_buy
