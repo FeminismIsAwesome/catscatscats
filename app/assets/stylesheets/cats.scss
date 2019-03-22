@@ -16,6 +16,8 @@ body {
 
 .cat-card {
   margin-top: 10px;
+  vertical-align: top;
+  display: inline-block;
   width: 275px;
   text-align: center;
   border: 1px solid black;
@@ -32,11 +34,6 @@ body {
 .cat-flavor {
   font-style: italic;
   font-size: 12px;
-}
-
-.cat-gallery {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .rules-reference {
@@ -57,7 +54,7 @@ body {
 @media print {
   .cat-card {
     display: inline-block;
-    width: 30%;
+    //width: 30%;
   }
 
   .cat-gallery {
