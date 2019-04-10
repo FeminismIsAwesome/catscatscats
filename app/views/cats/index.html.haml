@@ -9,7 +9,7 @@
     .cat-card
       %h5.cat-title
         = cat["title"]
-      %img.cat-img{src: cat["tile_image"]}
+      %img.cat-img{src: get_tile_image(cat)}
       - if cat["tolerance"].present?
         .cat-stats.row
           .col-4
@@ -25,18 +25,18 @@
           .col-4
             %span
               = cat["subtype"]
-          - if @use_point_buy
-            .col-3{style: 'background-color: lightgreen;'}
-              %span
-                $
-              %span
-                = cat["cost"]
 
+      - if cat['type'].in?(%w(Vote Attachment Item item Immediate immediate attachment reaction Reaction))
+        .cat-stats.row
+          .col-6
+            Action
+          .col-6
+            = cat['type']
       .cat-mechanics
         %h4.cat-description
           - (cat["description"] || "").split("\n").each do |line|
             %div
-              = line
+              != render_cat_line(line)
         %h7.cat-flavor
           = cat["flavor"]
 

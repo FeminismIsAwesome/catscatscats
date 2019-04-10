@@ -11,7 +11,7 @@ class CatsController < ApplicationController
       elsif cat['type'] == 'starter'
         0
       else
-        2
+        cat['description'].length
       end
     end
     @use_point_buy = false
