@@ -31,6 +31,18 @@ body {
   background: rgba(255, 255, 255, 0);
 }
 
+.full {
+  width: 100%;
+}
+
+.tcol-3 {
+  width: 20%;
+}
+
+.tcol-5 {
+  width: 50%;
+}
+
 .cat-flavor {
   font-style: italic;
   font-size: 12px;
@@ -67,6 +79,11 @@ body {
 
   .col-4 {
     width: 30%;
+    display: inline;
+  }
+
+  .col-5 {
+    width: 40%;
     display: inline;
   }
 

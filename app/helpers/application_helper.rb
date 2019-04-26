@@ -7,6 +7,20 @@ module ApplicationHelper
     line.gsub(/[iI]nfluence/, image_tag(asset_path("money"), class: 'fish'))
   end
 
+  def get_happiness(line)
+    num = line.to_i
+    (1..num).map do |_|
+      image_tag(asset_path("coolcat.png"), class: 'tolerance angry shorten')
+    end.join("\n")
+  end
+
+  def get_cost(cost)
+    cost = cost.gsub('W', image_tag(asset_path("money"), class: 'fish'))
+    cost = cost.gsub('F', image_tag(asset_path("couch.png"), class: 'fish'))
+    cost = cost.gsub('C', image_tag(asset_path("catnip.png"), class: 'fish'))
+    cost.gsub('T', image_tag(asset_path("cattoy.png"), class: 'fish'))
+  end
+
   def get_tile_image(cat)
     if cat["SELF"].present?
       image_url(cat["tile_image"])

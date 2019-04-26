@@ -7,18 +7,31 @@
 .cat-gallery
   - @cats.each do |cat|
     .cat-card
-      %table.full
-        %tr.full
-          %td.tcol-3
-            - if cat["Number-tl"].present?
-              != get_happiness(cat["Number-tl"])
-          %td.tcol-5
-            %h5.cat-title
-              = cat["title"]
-          %td.tcol-3
-            - if cat["Number-tr"].present?
-              != get_cost(cat["Number-tr"])
+      %h5.cat-title
+        = cat["title"]
       %img.cat-img{src: get_tile_image(cat)}
+      - if cat["tolerance"].present?
+        .cat-stats.row
+          .col-4
+            %span
+              = image_tag asset_path("tolerance.jpeg"), class: 'tolerance'
+            %span
+              = cat["tolerance"]
+          .col-4
+            %span
+              = image_tag asset_path("coolcat.png"), class: 'tolerance'
+            %span
+              = cat["points"]
+          .col-4
+            %span
+              = cat["subtype"]
+
+      - if cat['type'].in?(%w(Vote Attachment Item item Immediate immediate attachment reaction Reaction))
+        .cat-stats.row
+          .col-6
+            Action
+          .col-6
+            = cat['type']
       .cat-mechanics
         %h4.cat-description
           - (cat["description"] || "").split("\n").each do |line|
