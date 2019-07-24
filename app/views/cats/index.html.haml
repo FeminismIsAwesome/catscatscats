@@ -17,8 +17,23 @@
               = cat["title"]
           %td.tcol-3
             - if cat["Number-tr"].present?
-              != get_cost(cat["Number-tr"])
-      %img.cat-img{src: get_tile_image(cat)}
+              = cat["Number-tr"]
+      - if cat['type'] != 'Money'
+        %img.cat-img{src: get_tile_image(cat)}
+      - else
+        %img.cat-img-massive{src: get_tile_image(cat)}
+      - if cat['type'] == 'award'
+        .cat-stats.row
+          .col-12
+            END GAME TROPHY
+      - if cat['type'] == 'positive'
+        .cat-stats.row
+          .col-12
+            ATTACH TO CAT FOR BONUS
+      - if cat['type'] == 'negative'
+        .cat-stats.row
+          .col-12
+            ATTACH TO CAT FOR LULS
       .cat-mechanics
         %h4.cat-description
           - (cat["description"] || "").split("\n").each do |line|
