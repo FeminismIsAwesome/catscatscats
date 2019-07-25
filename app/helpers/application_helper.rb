@@ -14,6 +14,27 @@ module ApplicationHelper
     end.join("\n")
   end
 
+  def get_happiness_top_right(line)
+    num = line.to_i
+    cat_setup = (1..num.abs).map do |_|
+      image_tag(asset_path("coolcat.png"), class: 'modifier-cat angry shorten')
+    end.join("\n")
+    if num < 0
+      cat_setup = "-" + cat_setup
+    end
+    if line && line.include?("/:attachment:")
+      cat_setup += "<span class='modifier-slash'>  /  </span>" + image_tag(asset_path("hanginthere.png"), class: 'modifier-cat angry shorten')
+    end
+    cat_setup
+  end
+
+  def get_happiness_big(line)
+    num = line.to_i
+    (1..num).map do |_|
+      image_tag(asset_path("coolcat.png"), class: 'score-big angry shorten')
+    end.join("\n")
+  end
+
   def get_cost(cost)
     cost = cost.gsub('W', image_tag(asset_path("money"), class: 'fish'))
     cost = cost.gsub('F', image_tag(asset_path("couch.png"), class: 'fish'))

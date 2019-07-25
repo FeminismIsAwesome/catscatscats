@@ -9,22 +9,28 @@
     .cat-card
       %table.full
         %tr.full
-          %td.tcol-3
-            - if cat["Number-tl"].present?
-              != get_happiness(cat["Number-tl"])
-          %td.tcol-5
-            %h5.cat-title
-              = cat["title"]
-          %td.tcol-3
-            - if cat["Number-tr"].present?
-              = cat["Number-tr"]
+          - if cat["type"].in?(%w(negative positive))
+            %td.tcol-2
+            %td.tcol-4.cat-shift-title
+              %h5.cat-title
+                = cat["title"]
+            %td.tcol-6
+              != get_happiness_top_right(cat["Number-tr"])
+          - else
+            %td.tcol-3
+              - if cat["Number-tl"].present?
+                != get_happiness(cat["Number-tl"])
+            %td.tcol-5
+              %h5.cat-title
+                = cat["title"]
+            %td.tcol-3
       - if cat['type'] != 'Money'
         %img.cat-img{src: get_tile_image(cat)}
       - else
         %img.cat-img-massive{src: get_tile_image(cat)}
       - if cat['type'] == 'award'
         .cat-stats.row
-          .col-12
+          .col-12.trophies
             END GAME TROPHY
       - if cat['type'] == 'positive'
         .cat-stats.row
@@ -41,45 +47,13 @@
               != render_cat_line(line)
         %h7.cat-flavor
           = cat["flavor"]
+        - if cat["Number-tr"].present?
+          -if cat['type'] == 'action'
+            .cat-action-cost
+              = cat["Number-tr"].gsub('.00', '')
+          - elsif cat['type'] == 'cat'
+            != get_happiness_big(cat["Number-tr"])
 
-.row.rules-reference
-  .col-10
-    %h1
-      Quick Rules Reference
-    %h2
-      Start of Turn:
-    %h3
-      1): Either:
-    %ul
-      %li Play an action card from the pile.
-      %li Discard a card an action card from the pile, perform 2 bonus actions.
-    %h3
-      2): Pick one of these actions
-    %ul
-      %li Harass one cat with love, placing 2 annoyed tokens, or two cats for 1 each. If a cat has more Annoyance tokens than the threshold, remove all Annoyance tokens from it and send it to the stray cat alley.
-      %li Spend X-1 influence tokens, reduce X annoyed tokens from one cat
-      %li Gain 1 token of any kind, including influence, VP, and bid tokens.
-      %li Spend 1 influence token to place a bid on a cat. This causes everyone to place a blind bid. Losing bids must still spend half of the influence, rounded down. Nobody wins ties.
-    %h3
-      3): If you have a cat with Perform: on it, you may annoy it by putting it on performance.
-    %h6
-      This means you put 2 annoyed tokens on it and gain its Perform effect.
-    %h6
-      You may only do this to one cat per turn.
-    %h3  4): Set Keyword
-    %h6 This means when you play this card, gain the Action: effect. You can discard it for its Set: effect.op
-
-  .col-10
-    %h1
-      Errata/FAQ
-    %h4
-      What happens if two Reaction cards are played at once?
-    %h6
-      Resolve them in order via first player token taking preference, if order matters.
-    %h4
-      Can I do Perform on a cat if that would put them over the limit?
-    %h6
-      Yes, but then the cat would immediately go to the Stray bin.
 
 .row.extra-tokens
   .col-10
