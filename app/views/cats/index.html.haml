@@ -31,7 +31,11 @@
       - if cat['type'] == 'award'
         .cat-stats.row
           .col-12.trophies
-            END GAME TROPHY
+            TROPHY
+      - if cat['type'] == 'greed'
+        .cat-stats.row
+          .col-12.trophies
+            GREED
       - if cat['type'] == 'positive'
         .cat-stats.row
           .col-12

@@ -25,6 +25,9 @@ module ApplicationHelper
     if line && line.include?("/:attachment:")
       cat_setup += "<span class='modifier-slash'>  /  </span>" + image_tag(asset_path("hanginthere.png"), class: 'modifier-cat angry shorten')
     end
+    if line && line.include?("/:cat:")
+      cat_setup += "<span class='modifier-slash'>  /  </span>" + image_tag(asset_path("angry_meow.png"), class: 'modifier-cat angry shorten')
+    end
     cat_setup
   end
 

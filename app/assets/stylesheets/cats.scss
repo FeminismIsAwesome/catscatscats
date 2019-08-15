@@ -111,9 +111,9 @@ body {
     display: inline;
   }
 
-  //.page-break-test {
-  //  page-break-before:always;
-  //}
+  .page-break-test {
+    page-break-after:always;
+  }
 }
 
 .cat-description {
@@ -134,7 +134,7 @@ body {
   font-size: 32px;
   margin-top: 5px;
   background-color: white;
-  
+
 }
 
 .modifier-cat {
