@@ -33,9 +33,41 @@ module ApplicationHelper
 
   def get_happiness_big(line)
     num = line.to_i
+    cat_class = 'score-big angry shorten'
+    if num > 3
+      cat_class = 'score-small angry shorten'
+    end
     (1..num).map do |_|
-      image_tag(asset_path("coolcat.png"), class: 'score-big angry shorten')
+      image_tag(asset_path("coolcat.png"), class: cat_class)
     end.join("\n")
+  end
+
+
+  def get_happiness_small(line)
+    num = line.to_i
+    cat_class = 'score-small-icon angry shorten'
+    if num > 3
+      cat_class = 'score-small-icon angry shorten'
+    end
+    (1..num).map do |_|
+      image_tag(asset_path("coolcat.png"), class: cat_class)
+    end.join("\n")
+  end
+
+  def render_subtype(cat)
+    subtype = cat['subtype']
+    if subtype == 'brat'
+      return "<text class='bratty'><i class='fas fa-heart-broken'></i>️ #{subtype} </text>"
+    elsif subtype == 'curious'
+      return "<text class='curious'><i class='fas fa-eye'></i>️ #{subtype} </text>"
+    elsif subtype == 'cuddly'
+      return "<text class='cuddly'><i class='fas fa-heart'></i>️ #{subtype} </text>"
+    elsif subtype == 'furocious'
+      return "<text class='furocious'><i class='fas fa-fist-raised'></i>️ #{subtype} </text>"
+    elsif subtype == 'conspirator'
+      return "<text class='conspirator'><i class='fas fa-cat'></i>️ #{subtype} </text>"
+    end
+    subtype
   end
 
   def get_cost(cost)

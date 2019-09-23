@@ -50,6 +50,11 @@ body {
   background: rgba(255, 255, 255, 0);
 }
 
+.cat-left-align {
+  text-align: left;
+  margin-left: 1em;
+}
+
 .full {
   width: 100%;
 }
@@ -125,9 +130,68 @@ body {
   text-align: right;
 }
 
+.cat-scores {
+  //display: inline-block;
+}
+
 .tolerance {
-  width: 25px;
-  height: 25px;
+   width: 25px;
+   height: 25px;
+ }
+
+.score-small {
+  width: 50px;
+  height: 50px;
+}
+
+.score-small-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.bratty {
+  font-family: 'BrattyFont'
+}
+
+.curious {
+  font-family: 'Curious'
+}
+
+.cuddly {
+  font-family: 'Cuddly'
+}
+
+.furocious {
+  font-family: 'Furocious'
+}
+
+.conspirator {
+  font-family: 'Conspirator'
+}
+
+@font-face {
+  font-family: "Curious";
+  src: font-url("curious.ttf") format('truetype');;
+}
+
+@font-face {
+  font-family: "BrattyFont";
+  src: font-url("bratty.ttf") format('truetype');;
+}
+
+@font-face {
+  font-family: "Cuddly";
+  src: font-url("cuddly.ttf") format('truetype');;
+}
+
+@font-face {
+  font-family: "Furocious";
+  src: font-url("furocious.ttf") format('truetype');;
+}
+
+@font-face {
+  font-family: "Conspirator";
+  src: font-url("conspirator.ttf") format('truetype');;
 }
 
 .modifier-slash {
