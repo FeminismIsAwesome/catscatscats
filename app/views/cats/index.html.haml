@@ -16,7 +16,7 @@
               %h5.cat-title
                 = cat["title"]
             %td.tcol-6
-              != get_happiness_top_right(cat["Number-tr"])
+              != get_happiness_top_right(cat["Number-tr"], cat['subtype'])
           - elsif cat["type"] == 'cat'
             %td.tcol-4
               %h5.cat-title.cat-left-align.cat-title-big
@@ -44,7 +44,7 @@
       - if cat['type'] == 'cat'
         .cat-stats.row
           .col-12.trophies
-            != render_subtype(cat)
+            != render_subtype(cat['subtype'])
 
       - if cat['type'] == 'event'
         .cat-stats.row

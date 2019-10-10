@@ -7,7 +7,10 @@ class CatsController < ApplicationController
     cat_ordering = {
         "award" => 0,
         "cat" => 2,
+        "greed" => 5,
         "starter" => 3,
+        "positive" => 4,
+        "negative" => 6,
         "action" => 1
     }
     @cats = CSV.read(cats_path,headers: true).sort_by do

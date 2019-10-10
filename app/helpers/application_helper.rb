@@ -14,13 +14,16 @@ module ApplicationHelper
     end.join("\n")
   end
 
-  def get_happiness_top_right(line)
+  def get_happiness_top_right(line, cat_subtype)
     num = line.to_i
     cat_setup = (1..num.abs).map do |_|
       image_tag(asset_path("coolcat.png"), class: 'modifier-cat angry shorten')
     end.join("\n")
     if num < 0
       cat_setup = "<i class='fas fa-minus'></i>" + cat_setup
+    end
+    if cat_subtype.present?
+      cat_setup += render_subtype(cat_subtype).gsub(cat_subtype, '')
     end
     if line && line.include?("/:attachment:")
       cat_setup += "<span class='modifier-slash'>  /  </span>" + image_tag(asset_path("hanginthere.png"), class: 'modifier-cat angry shorten')
@@ -77,8 +80,7 @@ module ApplicationHelper
     end.join("\n")
   end
 
-  def render_subtype(cat)
-    subtype = cat['subtype']
+  def render_subtype(subtype)
     if subtype == 'brat'
       return "<text class='bratty'><i class='fas fa-heart-broken'></i>️ #{subtype} </text>"
     elsif subtype == 'curious'
