@@ -19,19 +19,19 @@
               != get_happiness_top_right(cat["Number-tr"])
           - elsif cat["type"] == 'cat'
             %td.tcol-4
-              %h5.cat-title.cat-left-align
+              %h5.cat-title.cat-left-align.cat-title-big
                 = cat["title"]
             %td.tcol-7.cat-scores
               - if cat["type"] == "cat"
-                != get_happiness_small(cat["Number-tr"])
+                != get_happiness_medium(cat["Number-tr"])
           - else
-            %td.tcol-3
+            %td.tcol-2
               - if cat["Number-tl"].present?
                 != get_happiness(cat["Number-tl"])
-            %td.tcol-5
+            %td.tcol-7
               %h5.cat-title
                 = cat["title"]
-            %td.tcol-3
+            %td.tcol-2
       - if cat['type'] != 'Money'
         %img.cat-img{src: get_tile_image(cat)}
       - else
@@ -39,6 +39,7 @@
       - if cat['type'] == 'award'
         .cat-stats.row
           .col-12.trophies
+            %i.fas.fa-trophy
             TROPHY
       - if cat['type'] == 'cat'
         .cat-stats.row
@@ -73,7 +74,7 @@
             .cat-action-cost
               = cat["Number-tr"].gsub('.00', '')
           - elsif cat['type'] == 'cat'
-            != get_happiness_big(cat["Number-tr"])
+            -#!= get_happiness_big(cat["Number-tr"])
 
 
 .row.extra-tokens

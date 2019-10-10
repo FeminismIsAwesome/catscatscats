@@ -20,7 +20,7 @@ module ApplicationHelper
       image_tag(asset_path("coolcat.png"), class: 'modifier-cat angry shorten')
     end.join("\n")
     if num < 0
-      cat_setup = "-" + cat_setup
+      cat_setup = "<i class='fas fa-minus'></i>" + cat_setup
     end
     if line && line.include?("/:attachment:")
       cat_setup += "<span class='modifier-slash'>  /  </span>" + image_tag(asset_path("hanginthere.png"), class: 'modifier-cat angry shorten')
@@ -40,6 +40,29 @@ module ApplicationHelper
     (1..num).map do |_|
       image_tag(asset_path("coolcat.png"), class: cat_class)
     end.join("\n")
+  end
+
+  def get_happiness_medium(line)
+    num = line.to_i
+    cat_class = 'score-medium angry shorten'
+    if num > 3
+      cat_class = 'score-small-icon angry shorten'
+    end
+    image = ""
+    if num < 0
+      num = num.abs
+      image += "<i class='fas fa-minus'></i>"
+    end
+    image = image + (1..num).map do |_|
+      image_tag(asset_path("coolcat.png"), class: cat_class)
+    end.join("\n")
+    if line && line.include?("/:attachment:")
+      image += "<span class='modifier-slash'>  /  </span>" + image_tag(asset_path("hanginthere.png"), class: 'modifier-cat angry shorten')
+    end
+    if line && line.include?("/:cat:")
+      image += "<span class='modifier-slash'>  /  </span>" + image_tag(asset_path("angry_meow.png"), class: 'modifier-cat angry shorten')
+    end
+    image
   end
 
 
