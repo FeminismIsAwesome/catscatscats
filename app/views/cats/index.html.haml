@@ -3,6 +3,16 @@
   HELLO KITTIES
 
   = link_to "da rules", "https://docs.google.com/document/d/1ONTHeYTsFVOLIQJIGger-aqo8Iq_IPk4aB7I5VOckX0/edit?usp=sharing", target: 'blank'
+.sign-up
+  .row
+    .col-12
+      Interested in hearing more and receiving updates on progress? Sign up for our email list!
+  = simple_form_for @email do |f|
+    .row
+      .col-4
+        = f.input :email
+      .col-6
+        = f.submit "Add Email", class: 'btn btn-primary'
 .page-break-test
 
 .cat-gallery

@@ -3,6 +3,7 @@ require 'csv'
 class CatsController < ApplicationController
 
   def index
+    @email = Email.new
     cats_path = Rails.root.join('config', 'cats.csv')
     cat_ordering = {
         "award" => 0,
