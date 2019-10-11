@@ -4,6 +4,7 @@ module ApplicationHelper
     line = line.gsub(':butthole:', image_tag(asset_path("tolerance.jpeg"), class: 'tolerance'))
     line = line.gsub(/[pP]issed/, image_tag(asset_path("pissedreplace.png"), class: 'tolerance angry'))
     line = line.gsub('VP', image_tag(asset_path("coolcat.png"), class: 'tolerance angry shorten'))
+    line = line.gsub(':trophy:', "<i class='fa fa-trophy'></i>")
     line.gsub(/[iI]nfluence/, image_tag(asset_path("money"), class: 'fish'))
   end
 
