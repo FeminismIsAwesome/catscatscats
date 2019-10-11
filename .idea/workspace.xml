@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b77dfc45-72f4-4236-8102-a486caf1dcb1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/cats/index.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cats/index.html.haml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/.~lock.cats.csv#" beforeDir="false" afterPath="$PROJECT_DIR$/config/.~lock.cats.csv#" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/cats.csv" beforeDir="false" afterPath="$PROJECT_DIR$/config/cats.csv" afterDir="false" />
     </list>
@@ -48,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/cats_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+            <state relative-caret-position="180">
+              <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -119,12 +117,12 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/cats_old_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/cats_old/index.html.haml" />
-        <option value="$PROJECT_DIR$/app/controllers/cats_controller.rb" />
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/cats.scss" />
         <option value="$PROJECT_DIR$/app/views/cats/index.html.haml" />
         <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/cats_controller.rb" />
       </list>
     </option>
   </component>
@@ -155,40 +153,7 @@
               <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
               <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
-              <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="fonts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
-              <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
-              <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
-              <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
-              <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
@@ -240,6 +205,7 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JSON" />
     <property name="js-jscs-nodeInterpreter" value="$USER_HOME$/.nvm/versions/node/v8.12.0/bin/node" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Other File Types" />
   </component>
   <component name="RecentsManager">
@@ -431,16 +397,15 @@
       <workItem from="1565741354344" duration="3608000" />
       <workItem from="1569211782767" duration="4374000" />
       <workItem from="1569267484377" duration="1643000" />
-      <workItem from="1570564180619" duration="4350000" />
+      <workItem from="1570564180619" duration="4786000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87499000" />
+    <option name="totallyTimeSpent" value="87935000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="729" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25121164" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -613,8 +578,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/cats_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+        <state relative-caret-position="180">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
         </state>
       </provider>
     </entry>
