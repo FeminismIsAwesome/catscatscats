@@ -72,6 +72,14 @@
         .cat-stats.row
           .col-12
             ATTACH TO CAT FOR BONUS
+      - if cat['type'] == 'aggro'
+        .cat-stats.row
+          .col-12
+            ATTACK
+      - if cat['type'] == 'defense'
+        .cat-stats.row
+          .col-12
+            DEFENSE
       - if cat['type'] == 'negative'
         .cat-stats.row
           .col-12
