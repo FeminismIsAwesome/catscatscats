@@ -16,6 +16,36 @@ class Cat
     end
   end
 
+  def self.cat_power_distro
+    CSV.read(CATS_PATH, headers: true).select do |cat|
+      cat["type"] == 'cat'
+    end.group_by do |cat|
+      (cat["description"] || "").length > 0
+    end.each do |cat, value|
+      puts "#{cat} has #{value.count}"
+    end;nil
+  end
+
+  def self.cat_power_distro_detailed
+    CSV.read(CATS_PATH, headers: true).select do |cat|
+      cat["type"] == 'cat'
+    end.group_by do |cat|
+      "#{cat["description"].present?}--#{cat['subtype']}"
+    end.each do |cat, value|
+      puts "#{cat} has #{value.count}"
+    end;nil
+  end
+
+  def self.type_distro
+    CSV.read(CATS_PATH, headers: true).select do |cat|
+      cat["type"] == 'cat'
+    end.group_by do |cat|
+      cat["subtype"]
+    end.each do |cat, value|
+      puts "#{cat} has #{value.count}"
+    end;nil
+  end
+
   def self.bonus_distro(type)
     CSV.read(CATS_PATH, headers: true).select do |cat|
       cat["type"] == type
