@@ -46,6 +46,28 @@ class Cat
     end;nil
   end
 
+  def self.get_cats
+    cats_path = Rails.root.join('config', 'cats.csv')
+    cat_ordering = {
+        "award" => 0,
+        "cat" => 2,
+        "greed" => 5,
+        "starter" => 3,
+        "positive" => 4,
+        "negative" => 6,
+        "action" => 1
+    }
+    CSV.read(cats_path,headers: true).sort_by do
+    | cat |
+      cat_order = cat_ordering[cat["type"]]
+      if cat_order.present?
+        cat_order
+      else
+        cat['description'].present? ? cat['description'].length : 1000
+      end
+    end
+  end
+
   def self.bonus_distro(type)
     CSV.read(CATS_PATH, headers: true).select do |cat|
       cat["type"] == type
@@ -54,6 +76,25 @@ class Cat
     end.each do |cat, value|
       puts "#{cat} has #{value.count}"
     end;nil
+  end
+
+  def self.make_image(cats =get_cats.first(9), num=0)
+    html = CatsController.render :just_cards, assigns: { cats: cats}
+    kit = IMGKit.new(html, width: 975, height: 1575)
+    css = StringIO.new( `curl http://localhost:3000/assets/cats.self-56d42432f42257ffb68aa6bf567a346540e2b96db2ccf467ad416ae450cd14c9.css` )
+    kit.stylesheets << css
+    css_2 = StringIO.new( `curl http://localhost:3000/assets/bootstrap.self-3529c8b3a4f85dfa856b4943cf9225a6dfa3af3b69e78b5b6f74461a6cfd72b0.css`)
+    kit.stylesheets << css_2
+    file = kit.to_file("tmp/cats#{num}.jpg")
+
+  end
+
+  def self.make_images
+    i = 0
+    get_cats.each_slice(9) do |cats|
+      make_image(cats, i)
+      i+= 1
+    end
   end
 
   def self.cat_distro_counts
