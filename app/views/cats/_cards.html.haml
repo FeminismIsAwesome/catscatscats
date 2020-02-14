@@ -11,7 +11,7 @@
             %td.tcol-6
               != get_happiness_top_right(cat["Number-tr"], cat['subtype'])
           - elsif cat["type"] == 'cat'
-            %td.tcol-4
+            %td.tcol-5
               %h5.cat-title.cat-left-align.cat-title-big
                 = cat["title"]
             %td.tcol-7.cat-scores
@@ -36,8 +36,8 @@
             TROPHY
       - if cat['type'] == 'cat'
         .cat-stats.row
-          .col-12.trophies
-            != render_subtype(cat['subtype'])
+          .col-12.trophies{class: "color-#{cat['subtype']}"}
+            != render_subtype(cat['subtype'], true)
 
       - if cat['type'] == 'event'
         .cat-stats.row
@@ -72,12 +72,7 @@
           = cat["flavor"]
         - if cat["Number-tr"].present?
           -if cat['type'] == 'action'
-            %table.cat-action-cost.table
-              %tr
-                %td
-                  = cat["Number-tr"].gsub('.00', '')
-                %td.cat-action-right
-                  Tax:
-                  = cat["Number-tl"]
+            .cost-font
+              = cat["Number-tr"].gsub('.00', '')
           - elsif cat['type'] == 'cat'
             -#!= get_happiness_big(cat["Number-tr"])

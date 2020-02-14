@@ -83,6 +83,26 @@ body {
   width: 20%;
 }
 
+.cost-font {
+  font-size: 28px;
+}
+
+.color-brat {
+  color: #db1a23;
+}
+
+.color-cuddly {
+  color: #20d91a;
+}
+
+.color-curious {
+  color: blue;
+}
+
+.color-furocious {
+  color: #d31ad9;
+}
+
 .tcol-5 {
   width: 50%;
 }
@@ -185,6 +205,10 @@ body {
   font-family: 'Furocious'
 }
 
+.cat-font {
+  font-family: 'Cat'
+}
+
 .conspirator {
   font-family: 'Conspirator'
 }
@@ -202,6 +226,11 @@ body {
 @font-face {
   font-family: "Cuddly";
   src: font-url("cuddly.ttf") format('truetype');;
+}
+
+@font-face {
+  font-family: "Cat";
+  src: font-url("kitties.ttf") format('truetype');;
 }
 
 @font-face {

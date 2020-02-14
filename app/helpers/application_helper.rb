@@ -17,14 +17,15 @@ module ApplicationHelper
 
   def get_happiness_top_right(line, cat_subtype)
     num = line.to_i
-    cat_setup = (1..num.abs).map do |_|
-      image_tag(asset_path("coolcat.png"), class: 'modifier-cat angry shorten')
-    end.join("\n")
+    image_asset = "coolcat.png"
     if num < 0
-      cat_setup = "<i class='fas fa-minus'></i>" + cat_setup
+      image_asset = "negative-face.png"
     end
+    cat_setup = (1..num.abs).map do |_|
+      image_tag(asset_path(image_asset), class: 'modifier-cat angry shorten')
+    end.join("\n")
     if cat_subtype.present?
-      cat_setup += render_subtype(cat_subtype).gsub(cat_subtype, '')
+      cat_setup += render_subtype(cat_subtype, false)
     end
     if line && line.include?("/:attachment:")
       cat_setup += "<span class='modifier-slash'>  /  </span>" + image_tag(asset_path("hanginthere.png"), class: 'modifier-cat angry shorten')
@@ -49,16 +50,18 @@ module ApplicationHelper
   def get_happiness_medium(line)
     num = line.to_i
     cat_class = 'score-medium angry shorten'
-    if num > 3
+    if num.abs > 3
       cat_class = 'score-small-icon angry shorten'
     end
     image = ""
+    image_class = "coolcat.png"
     if num < 0
       num = num.abs
-      image += "<i class='fas fa-minus'></i>"
+      image_class = "negative-face.png"
     end
+
     image = image + (1..num).map do |_|
-      image_tag(asset_path("coolcat.png"), class: cat_class)
+      image_tag(asset_path(image_class), class: cat_class)
     end.join("\n")
     if line && line.include?("/:attachment:")
       image += "<span class='modifier-slash'>  /  </span>" + image_tag(asset_path("hanginthere.png"), class: 'modifier-cat angry shorten')
@@ -81,17 +84,18 @@ module ApplicationHelper
     end.join("\n")
   end
 
-  def render_subtype(subtype)
+  def render_subtype(subtype, show_text)
+    text = show_text ? subtype : ''
     if subtype == 'brat'
-      return "<text class='bratty'><i class='fas fa-heart-broken'></i>️ #{subtype} </text>"
+      return "<text class='bratty color-brat'><i class='fas fa-heart-broken'></i>️ #{text} </text>"
     elsif subtype == 'curious'
-      return "<text class='curious'><i class='fas fa-eye'></i>️ #{subtype} </text>"
+      return "<text class='curious color-curious'><i class='fas fa-eye'></i>️ #{text} </text>"
     elsif subtype == 'cuddly'
-      return "<text class='cuddly'><i class='fas fa-heart'></i>️ #{subtype} </text>"
+      return "<text class='cuddly color-cuddly'><i class='fas fa-heart'></i>️ #{text} </text>"
     elsif subtype == 'furocious'
-      return "<text class='furocious'><i class='fas fa-fist-raised'></i>️ #{subtype} </text>"
+      return "<text class='furocious color-furocious'><i class='fas fa-fist-raised'></i>️ #{text} </text>"
     elsif subtype == 'conspirator'
-      return "<text class='conspirator'><i class='fas fa-cat'></i>️ #{subtype} </text>"
+      return "<text class='conspirator color-conspirator'><i class='fas fa-cat'></i>️ #{text} </text>"
     end
     subtype
   end
