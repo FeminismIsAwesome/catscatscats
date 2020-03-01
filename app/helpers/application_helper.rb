@@ -1,11 +1,33 @@
 module ApplicationHelper
 
-  def render_cat_line(line)
+  def render_cat_line(line, big_cat: false)
     line = line.gsub(':butthole:', image_tag(asset_path("tolerance.jpeg"), class: 'tolerance'))
     line = line.gsub(/[pP]issed/, image_tag(asset_path("pissedreplace.png"), class: 'tolerance angry'))
-    line = line.gsub('VP', image_tag(asset_path("coolcat.png"), class: 'tolerance angry shorten'))
+    if big_cat
+      line = line.gsub('VP', image_tag(asset_path("coolcat.png"), class: 'big-icon angry shorten'))
+    else
+      line = line.gsub('VP', image_tag(asset_path("coolcat.png"), class: 'tolerance angry shorten'))
+    end
     line = line.gsub(':trophy:', "<i class='fa fa-trophy'></i>")
-    line.gsub(/[iI]nfluence/, image_tag(asset_path("money"), class: 'fish'))
+    line = line.gsub('litterbox', image_tag(asset_path('litterbox.png'), class: 'tolerance angry shorten'))
+    line = line.gsub('catnip', image_tag(asset_path('catnip.png'), class: 'tolerance angry shorten'))
+    line = line.gsub('toy', image_tag(asset_path('cattoy.png'), class: 'tolerance angry shorten'))
+    line = line.gsub('food', image_tag(asset_path('money.png'), class: 'tolerance angry shorten'))
+    # line.gsub(/[iI]nfluence/, image_tag(asset_path("money")), class: 'tolerance angry shorten')
+  end
+
+  def get_needs(letters)
+    letters.chars.map do |letter|
+      if letter == 'F'
+        image_tag(asset_path('money.png'), class: 'tolerance angry shorten')
+      elsif letter == 'T'
+        image_tag(asset_path('cattoy.png'), class: 'tolerance angry shorten')
+      elsif letter == 'C'
+        image_tag(asset_path('catnip.png'), class: 'tolerance angry shorten')
+      elsif letter == 'L'
+        image_tag(asset_path('litterbox.png'), class: 'tolerance angry shorten')
+      end
+    end.compact.join("<span style='margin-left: 5px;'> </span>")
   end
 
   def get_happiness(line)

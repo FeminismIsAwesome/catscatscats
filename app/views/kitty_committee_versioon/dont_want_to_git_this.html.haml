@@ -11,18 +11,16 @@
             %td.tcol-6
               != get_happiness_top_right(cat["Number-tr"], cat['subtype'])
           - elsif cat["type"] == 'cat'
-            %td.tcol-2
-              != get_needs(cat['Number-tl'])
             %td.tcol-5
               %h5.cat-title.cat-left-align.cat-title-big
                 = cat["title"]
-            %td.tcol-2.cat-scores
-              != get_needs(cat["Number-tr"])
+            %td.tcol-7.cat-scores
+              - if cat["type"] == "cat"
+                != get_happiness_medium(cat["Number-tr"])
           - else
             %td.tcol-2
-              - if cat["Number-tl"].present?
-                = (cat["Number-tl"])
-                = image_tag(asset_path("energy.jpg"), class: 'tolerance angry shorten')
+              - if cat["Number-tl"].present? && cat["type"] != 'action'
+                != get_happiness(cat["Number-tl"])
             %td.tcol-7
               %h5.cat-title
                 = cat["title"]
@@ -53,10 +51,6 @@
         .cat-stats.row
           .col-12
             ATTACH TO CAT FOR BONUS
-      - if cat['type'] == 'permanent'
-        .cat-stats.row
-          .col-12
-            PERMANENT ITEM
       - if cat['type'] == 'aggro'
         .cat-stats.row
           .col-12
@@ -73,7 +67,7 @@
         %h4.cat-description
           - (cat["description"] || "").split("\n").each do |line|
             %div
-              != render_cat_line(line, big_cat: true)
+              != render_cat_line(line)
         %h7.cat-flavor
           = cat["flavor"]
         - if cat["Number-tr"].present?
