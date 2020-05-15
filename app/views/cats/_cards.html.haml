@@ -18,8 +18,21 @@
                 = cat["title"]
             %td.tcol-2.cat-scores
               != get_needs(cat["Number-tr"])
+          - elsif cat['type'] == 'upgrade'
+            %td.tcol-3
+              %span
+                = cat["Number-tl"]
+              %span
+                %i.fa.fa-sd-card
+            %td.tcol-5
+              %h5.cat-title
+                = cat["title"]
+            %td.tcol-3
+              %span
+                = cat["Number-tr"]
+              %i.fa.fa-lightbulb
           - else
-            %td.tcol-2
+            %td.tcol-3
               - if cat["Number-tl"].present?
                 = (cat["Number-tl"])
                 = image_tag(asset_path("energy.jpg"), class: 'tolerance angry shorten')
@@ -45,6 +58,11 @@
         .cat-stats.row
           .col-12.trophies
             EVENT
+      - if cat['type'] == 'upgrade'
+        .cat-stats.row
+          .col-12
+            != cat['subtype']
+            upgrade
       - if cat['type'] == 'greed'
         .cat-stats.row
           .col-12.trophies

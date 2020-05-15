@@ -55,7 +55,8 @@ class Cat
         "starter" => 3,
         "positive" => 4,
         "negative" => 6,
-        "action" => 1
+        "action" => 1,
+        "upgrade" => 10
     }
     CSV.read(cats_path,headers: true).sort_by do
     | cat |
@@ -73,6 +74,38 @@ class Cat
       cat["type"] == type
     end.group_by do |cat|
       cat["Number-tr"]
+    end.each do |cat, value|
+      puts "#{cat} has #{value.count}"
+    end;nil
+  end
+
+  def self.need_distro
+    CSV.read(CATS_PATH, headers: true).select do |cat|
+      cat["type"] == 'cat'
+    end.group_by do |cat|
+      cat["Number-tl"].chars.map do |num|
+        if num == 'F' || num == 'C'
+          1
+        else
+          2
+        end
+      end.reduce(:+)
+    end.each do |cat, value|
+      puts "#{cat} has #{value.count}"
+    end;nil
+  end
+
+  def self.greed_distro
+    CSV.read(CATS_PATH, headers: true).select do |cat|
+      cat["type"] == 'cat'
+    end.group_by do |cat|
+      cat["Number-tr"].chars.map do |num|
+        if num == 'F' || num == 'C'
+          1
+        else
+          2
+        end
+      end.reduce(:+)
     end.each do |cat, value|
       puts "#{cat} has #{value.count}"
     end;nil

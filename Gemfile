@@ -5,7 +5,9 @@ ruby '2.6.1'
 gem 'simple_form'
 gem 'haml'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.0'
+gem 'rails'
+gem 'webpacker'
+gem 'active_model_serializers'
 # Use pg as the database for Active Record
 gem 'pg'
 # Use Puma as the app server

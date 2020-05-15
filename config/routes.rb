@@ -7,4 +7,16 @@ Rails.application.routes.draw do
   end
   resources :emails, only: :create
   resources :cats_old, only: :index
+  resources :cats_room
+  resources :cat_cards do
+    member do
+      post :act
+    end
+  end
+  resources :conversations, only: :index do
+    collection do
+      get :fuck
+    end
+  end
+  mount ActionCable.server => '/cable'
 end
