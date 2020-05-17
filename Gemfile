@@ -44,6 +44,10 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
+gem 'redis'
+
+gem 'rack-cors'
+
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
@@ -53,6 +57,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'imgkit'
   gem 'wkhtmltoimage-binary'
+  gem 'annotate'
 end
 
 group :production do

@@ -90,6 +90,10 @@ class CatCard extends React.Component {
         </div>
     }
 
+    iSwear = () => {
+        fetch("/cats_games/2/act", {method: 'post'})
+    }
+
     renderTopLineAction = (card) => {
         return  <div className="full u-flex u-flex-space-between"><div className="u-4ml--l">
                     <span className="u-4mr--s">
@@ -113,9 +117,9 @@ class CatCard extends React.Component {
         if(subtype == 'brat') {
             return <div className="bratty color-brat"><i className="fas fa-heart-broken"></i>️ {text} </div>
         } else if(subtype == 'curious') {
-            return <div className="curious color-curious"><i className="fas fa-eye"></i>️ #{text} </div>
+            return <div className="curious color-curious"><i className="fas fa-eye"></i>️ {text} </div>
         } else if(subtype == "cuddly") {
-            return <div className="cuddly color-cuddly"><i className="fas fa-heart"></i>️ #{text} </div>
+            return <div className="cuddly color-cuddly"><i className="fas fa-heart"></i>️ {text} </div>
         } else if(subtype == "furocious") {
             return <div className="furocious color-furocious"><i className="fas fa-fist-raised"></i>️ #{text} </div>
         } else if(subtype == "conspirator") {
@@ -135,7 +139,7 @@ class CatCard extends React.Component {
 
     render = () => {
         const {card} = this.props;
-        return <div className="cat-card-js">
+        return <div className="cat-card-js" onClick={this.iSwear}>
             { card.kind === 'cat' ? this.renderTopLineCat(card) : this.renderTopLineAction(card) }
 
             { this.renderImage(card) }

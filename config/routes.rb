@@ -5,9 +5,17 @@ Rails.application.routes.draw do
       get :just_cards
     end
   end
+
+  resources :players
   resources :emails, only: :create
   resources :cats_old, only: :index
-  resources :cats_room
+  resources :cats_games do
+    member do
+      post :act
+      post :start_game
+      get :current_state
+    end
+  end
   resources :cat_cards do
     member do
       post :act

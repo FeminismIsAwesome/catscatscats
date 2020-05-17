@@ -1,0 +1,5 @@
+%div
+  %h2 Pick Name To Get In
+  = simple_form_for CatPlayer.new, url: players_path(cat_game_id: params[:cat_game_id]) do |f|
+    = f.input :name
+    = f.submit 'Send'

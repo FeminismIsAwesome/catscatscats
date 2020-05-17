@@ -1,10 +1,15 @@
 class CatCardsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def index
     render json: CatCard.all.map(&:as_json)
   end
 
-  def act
-    ActionCable.server.broadcast 'conversations_channel', {message: {treats: 2}, kind: 'stats'}
-    head :ok
+  def generate_hand
+
+  end
+
+  def generate_deck
+
   end
 end
