@@ -16,7 +16,7 @@ class PlayerMat extends React.Component {
                 <div> <img className="player-cat-icon" src={ToyImage}/> {stats.toys} </div>
                 <div> <img className="player-cat-icon" src={CatnipImage}/> {stats.catnip} </div>
                 <div> <img className="player-cat-icon" src={LitterboxImage}/> {stats.litterbox} </div>
-
+                <div> <i className='fa fa-trophy'></i> {stats.owned_cards_count} </div>
             </div>
         </div>
     }

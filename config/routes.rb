@@ -14,11 +14,13 @@ Rails.application.routes.draw do
       post :act
       post :start_game
       get :current_state
+      get :refresh_state
+      post :simulate_cat_round
     end
   end
   resources :cat_cards do
     member do
-      post :act
+      post :pick
     end
   end
   resources :conversations, only: :index do
@@ -26,5 +28,12 @@ Rails.application.routes.draw do
       get :fuck
     end
   end
+
+  resources :shelter_cats do
+    collection do
+      post :bid
+    end
+  end
+
   mount ActionCable.server => '/cable'
 end

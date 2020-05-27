@@ -2,16 +2,21 @@
 #
 # Table name: cat_players
 #
-#  id          :bigint           not null, primary key
-#  catnip      :integer          default(0)
-#  food        :integer          default(0)
-#  litterbox   :integer          default(0)
-#  name        :string
-#  toys        :integer          default(0)
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  cat_game_id :bigint
-#  remote_id   :string
+#  id               :bigint           not null, primary key
+#  actions_provided :jsonb
+#  catnip           :integer          default(0)
+#  energy_count     :integer          default(0)
+#  food             :integer          default(0)
+#  hand_card_ids    :jsonb
+#  litterbox        :integer          default(0)
+#  name             :string
+#  owned_card_ids   :jsonb
+#  toys             :integer          default(0)
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  cat_game_id      :bigint
+#  next_player_id   :bigint
+#  remote_id        :string
 #
 # Indexes
 #
@@ -19,4 +24,32 @@
 #
 class CatPlayer < ApplicationRecord
   belongs_to :cat_game
+  belongs_to :next_player, class_name: "CatPlayer"
+  has_many :owned_cats
+
+  def as_json
+    (super).merge({owned_cards_count: owned_card_ids.count,
+                  owned_cats: owned_cats.map(&:as_json)})
+  end
+
+  def current_draft_hand
+    actions_provided[current_draft_index]
+  end
+
+  def bids
+    ShelterCatBid.where(cat_player_id: self.id)
+  end
+
+  def current_draft_index
+    hand_card_ids.count
+  end
+
+  def display_loading?
+    !cat_game.drafting? && actions_provided.count <= hand_card_ids.count
+  end
+
+  def adjust_energy(num)
+    self.energy_count += num
+    save!
+  end
 end

@@ -1,4 +1,4 @@
-title,subtype,description,Number-tl,Number-tr,type,SELF,tile_image,
+title,subtype,description,Number-tl,Number-tr,type,SELF,tile_image,hover_description
 "Bismarck, Cat Royal",curious,VP VP,FF,T,cat,,https://www.hillspet.com/content/dam/cp-sites/hills/hills-pet/en_us/exported/cat-care/images/russian-blue-cat-lying-on-white-shelf.jpg,
 Willow,curious,VP VP,TF,L,cat,SELF,willow.jpg,
 Olive,cuddly,VP VP,F,T,cat,SELF,olive.png,
@@ -10,12 +10,12 @@ Salami,furocious,VP VP,CC,LFF,cat,,"https://ih1.redbubble.net/image.311481406.27
 "Tonka, Tonkinese Spy",curious,VP VP,F,LFF,cat,,https://cdn3-www.cattime.com/assets/uploads/gallery/tonkinese-cats-and-kittens/tonkinese-cats-and-kittens-1.jpg,
 Kotya,curious,VP VP,F,T,cat,,https://cdn.rbth.com/all/2017/04/28/Cats/07-2908346-b.jpg,
 Vanilla,brat,"VP VP
-Paired: Strawberry, Chocolate, Nutella.",CCF,L,cat,,https://i.pinimg.com/originals/88/24/d4/8824d49d4f2cab653133d153ff070549.jpg,
+Neopolitan Pair",CCF,L,cat,,https://i.pinimg.com/originals/88/24/d4/8824d49d4f2cab653133d153ff070549.jpg,"Owning any other of Strawberry, Vanilla, Chocolate, Nutella gives +1 VP"
 Chocolate,curious,"VP VP
-Paired: Strawberry, Vanilla, Nutella.",CCF,L,cat,,https://i.pinimg.com/originals/dd/23/49/dd23490a5b76f104afe0e9faab4d7de6.jpg,
+Neopolitan Pair",CCF,L,cat,,https://i.pinimg.com/originals/dd/23/49/dd23490a5b76f104afe0e9faab4d7de6.jpg,"Owning any other of Strawberry, Vanilla, Chocolate, Nutella gives +1 VP"
 Strawberry,cuddly,"VP VP
-Paired: Vanilla, Chocolate, Nutella.",CCF,L,cat,,https://previews.123rf.com/images/isselee/isselee1712/isselee171200155/91808967-close-up-portrait-on-a-ginger-cat-white-background.jpg,
-Nutella,furocious,VP VP,CFF,L,cat,,https://i.pinimg.com/originals/83/72/be/8372be967c4a1664053fb99cb313b7d4.jpg,
+Neopolitan Pair",CCF,L,cat,,https://previews.123rf.com/images/isselee/isselee1712/isselee171200155/91808967-close-up-portrait-on-a-ginger-cat-white-background.jpg,"Owning any other of Strawberry, Vanilla, Chocolate, Nutella gives +1 VP"
+Nutella,furocious,VP VP,CFF,L,cat,,https://i.pinimg.com/originals/83/72/be/8372be967c4a1664053fb99cb313b7d4.jpg,"Owning any other of Strawberry, Vanilla, Chocolate, Nutella gives +1 VP"
 Spotty,cuddly,VP VP,CC,LF,cat,,https://image.shutterstock.com/display_pic_with_logo/1171229/384769147/stock-photo-unusual-spotted-multicolor-cat-with-green-eyes-384769147.jpg,
 White Bread,furocious,VP VP,FF,LC,cat,,https://www.thesprucepets.com/thmb/5Z5WAqlqp0um9gWQ4KmFwlpfmbA=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/twenty20_e47b3798-dd9b-40b1-91ef-1d820337966e-5aa3f798642dca00363b0df1.jpg,
 Big Boi,cuddly,VP VP,FF,FF,cat,,https://pictures-of-cats.org/wp-content/uploads/2014/05/water-melon-with-fur-cat.jpg,

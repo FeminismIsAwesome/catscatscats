@@ -12,11 +12,13 @@ class PlayersList extends React.Component {
                 <h3>
                     {player.name} ({player.remote_id})
                 </h3>
-                <div className="u-flex">
-                    <div><img className="player-cat-icon" src={FoodImage}/> {player.food} </div>
-                    <div><img className="player-cat-icon" src={ToyImage}/> {player.toys} </div>
-                    <div><img className="player-cat-icon" src={CatnipImage}/> {player.catnip} </div>
-                    <div><img className="player-cat-icon" src={LitterboxImage}/> {player.litterbox} </div>
+                <div className="u-flex u-flex-center">
+                    <div><img className="player-cat-icon u-4ml--s" src={FoodImage}/> {player.food} </div>
+                    <div><img className="player-cat-icon u-4ml--s" src={ToyImage}/> {player.toys} </div>
+                    <div><img className="player-cat-icon u-4ml--s" src={CatnipImage}/> {player.catnip} </div>
+                    <div><img className="player-cat-icon u-4ml--s" src={LitterboxImage}/> {player.litterbox} </div>
+                    <div> <i className='fa fa-sd-card u-4ml--s'></i> {player.owned_cards_count} </div>
+                    <div> <i className='fa fa-lightbulb u-4ml--s'></i> {player.energy_count} </div>
 
                 </div>
             </div>)

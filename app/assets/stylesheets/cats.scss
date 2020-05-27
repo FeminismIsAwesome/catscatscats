@@ -290,7 +290,6 @@ body {
   border-top: 1px solid black;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 10px;
 }
 
 .cat-stats {
@@ -337,17 +336,17 @@ body {
   margin-top: 10px;
   vertical-align: top;
   display: inline-block;
-  width: 200px;
+  width: 100px;
   text-align: center;
   border: 1px solid black;
   margin-left: 10px;
   margin-right: 10px;
-  min-height: 300px;
+  min-height: 150px;
   //background-image: image-url("catscatscats.jpg")
 }
 
 .cat-img-js {
-  height: 150px;
+  height: 75px;
   width: 98%;
   border-right: 1px solid black;
   border-left: 1px solid black;
@@ -361,4 +360,62 @@ body {
 .player-cat-icon {
   width: 25px;
   height: 25px;
+}
+
+.cat-description-js {
+  font-size: 12px;
+
+}
+
+.tolerance-js {
+  width: 10px;
+  height: 10px;
+}
+
+.u-4ml--xxs {
+  margin-left: 2px;
+}
+
+.u-4mr--xxs {
+  margin-left: 2px;
+}
+
+.big-icon-js {
+  width: 20px;
+  height: 20px;
+}
+
+.js-subtype {
+  font-size: 12px;
+}
+
+.u-4mb--n {
+  margin-bottom: 0px!important;
+}
+
+.cat-stats-js {
+  font-size: 12px;
+}
+
+.cats-game-js {
+  line-height: 1;
+}
+
+.cat-card-js:hover {
+  background-color: lightsalmon;
+  cursor: pointer;
+}
+
+.cat-card-js-highlighted {
+  background-color: lightsalmon;
+}
+
+.u-flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.big-load-icon {
+  height: 50px;
+  width: 50px;
 }

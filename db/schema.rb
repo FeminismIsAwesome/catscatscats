@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_16_221259) do
+ActiveRecord::Schema.define(version: 2020_05_23_215222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activity_logs", force: :cascade do |t|
+    t.bigint "cat_game_id"
+    t.bigint "cat_player_id"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cat_game_id"], name: "index_activity_logs_on_cat_game_id"
+    t.index ["cat_player_id"], name: "index_activity_logs_on_cat_player_id"
+  end
 
   create_table "cat_cards", force: :cascade do |t|
     t.string "title"
@@ -26,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_05_16_221259) do
     t.string "kind"
     t.boolean "self_hosted"
     t.text "tile_image"
+    t.text "hover_description"
   end
 
   create_table "cat_decks", force: :cascade do |t|
@@ -34,6 +45,9 @@ ActiveRecord::Schema.define(version: 2020_05_16_221259) do
     t.jsonb "deck_pile"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.jsonb "cats_discard_pile"
+    t.jsonb "cats_draw_pile"
+    t.jsonb "cat_player_order", default: []
     t.index ["cat_game_id"], name: "index_cat_decks_on_cat_game_id"
   end
 
@@ -41,6 +55,9 @@ ActiveRecord::Schema.define(version: 2020_05_16_221259) do
     t.string "ended_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "state", default: "drafting"
+    t.bigint "current_player_id"
+    t.jsonb "bids_placed", default: []
   end
 
   create_table "cat_players", force: :cascade do |t|
@@ -53,6 +70,11 @@ ActiveRecord::Schema.define(version: 2020_05_16_221259) do
     t.integer "litterbox", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.jsonb "owned_card_ids", default: []
+    t.jsonb "hand_card_ids", default: []
+    t.integer "energy_count", default: 0
+    t.bigint "next_player_id"
+    t.jsonb "actions_provided"
     t.index ["cat_game_id"], name: "index_cat_players_on_cat_game_id"
   end
 
@@ -61,6 +83,35 @@ ActiveRecord::Schema.define(version: 2020_05_16_221259) do
     t.boolean "ian_confirmed_legit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "owned_cats", force: :cascade do |t|
+    t.bigint "cat_player_id"
+    t.bigint "cat_card_id"
+    t.integer "happiness_level", default: 3
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cat_card_id"], name: "index_owned_cats_on_cat_card_id"
+    t.index ["cat_player_id"], name: "index_owned_cats_on_cat_player_id"
+  end
+
+  create_table "shelter_cat_bids", force: :cascade do |t|
+    t.bigint "cat_player_id"
+    t.bigint "shelter_cat_id"
+    t.integer "bid_amount", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cat_player_id"], name: "index_shelter_cat_bids_on_cat_player_id"
+    t.index ["shelter_cat_id"], name: "index_shelter_cat_bids_on_shelter_cat_id"
+  end
+
+  create_table "shelter_cats", force: :cascade do |t|
+    t.bigint "cat_game_id"
+    t.bigint "cat_card_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cat_card_id"], name: "index_shelter_cats_on_cat_card_id"
+    t.index ["cat_game_id"], name: "index_shelter_cats_on_cat_game_id"
   end
 
 end
