@@ -14,17 +14,6 @@ class CatsGamesController < ApplicationController
     head :ok
   end
 
-  def start_game
-    @cat_game.generate_deck
-    cat_players = @cat_game.cat_players.order("random()")
-    cat_players.each_with_index do |player, index|
-      cards = @cat_game.cat_deck.return_next_action_cards(7)
-      player.update!(energy_count: 10, hand_card_ids: [], actions_provided: [cards.map(&:id)], owned_card_ids: [], next_player_id: cat_players[(index + 1)% cat_players.size].id)
-    end
-    CatGamesChannel.broadcast_to @cat_game.id, {message: {food: 2}, kind: 'refresh_draft_state'}
-    head :ok
-  end
-
   def current_state
     player = CatPlayer.find_or_initialize_by(id: session[:player_id])
     render json: {
@@ -34,18 +23,20 @@ class CatsGamesController < ApplicationController
     }
   end
 
+  def start_game
+    CatGameResetter.new(@cat_game, current_player).start_game
+    CatGamesChannel.broadcast_to @cat_game.id, {message: {food: 2}, kind: 'refresh_draft_state'}
+    head :ok
+  end
+
   def simulate_cat_round
-    @cat_game.generate_deck
-    cat_players = @cat_game.cat_players.order("random()")
-    cat_players.each_with_index do |player, index|
-      cards = @cat_game.cat_deck.return_next_action_cards(7)
-      player.update!(energy_count: 10, hand_card_ids: cards.map(&:id), actions_provided: [cards.map(&:id)], owned_card_ids: [], next_player_id: cat_players[(index + 1)% cat_players.size].id)
-    end
-    @cat_game.update!(state: 'cat_bidding')
-    @cat_game.update!(bids_placed: [])
-    @cat_game.shelter_cats.destroy_all
-    @cat_game.next_cats_phase
-    @cat_game.start_player_order(current_player_id)
+    CatGameResetter.new(@cat_game, current_player).simulate_cat_round
+    CatGamesChannel.broadcast_to @cat_game.id, {message: {empty: rand()}, kind: 'refresh_draft_state'}
+    head :ok
+  end
+
+  def simulate_card_playing_round
+    CatGameResetter.new(@cat_game, current_player).simulate_card_playing_round
     CatGamesChannel.broadcast_to @cat_game.id, {message: {empty: rand()}, kind: 'refresh_draft_state'}
     head :ok
   end

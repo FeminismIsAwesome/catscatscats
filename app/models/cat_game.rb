@@ -4,14 +4,16 @@
 #
 #  id                :bigint           not null, primary key
 #  bids_placed       :jsonb
+#  cards_played      :jsonb
 #  ended_at          :string
+#  players_passed    :jsonb
 #  state             :string           default("drafting")
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  current_player_id :bigint
 #
 class CatGame < ApplicationRecord
-  has_one :cat_deck
+  has_one :cat_deck, dependent: :destroy
   has_many :cat_players
   has_many :shelter_cats
 
@@ -32,6 +34,20 @@ class CatGame < ApplicationRecord
     if cat_players.count == cat_players.select{|cp| cp.hand_card_ids.count == 7}.count
       update!(state: 'cat_bidding')
     end
+  end
+
+  def move_to_card_playing!
+    update!(state: 'card_playing')
+  end
+
+  def check_move_to_cat_feeding!
+    if cat_players.count == players_passed.count
+      move_to_cat_feeding!
+    end
+  end
+
+  def move_to_cat_feeding!
+    update!(state: 'cat_feeding')
   end
 
   def shelter_cat_map
@@ -57,6 +73,13 @@ class CatGame < ApplicationRecord
 
   def start_player_order(suggested_order=cat_deck.cat_player_order.first)
     update!(current_player_id: suggested_order)
+  end
+
+  def cycle_player_order_ignore_passes!
+    cat_player_order_adjusted = cat_deck.cat_player_order - players_passed
+    current_index = cat_player_order_adjusted.find_index{|player_id| player_id == current_player_id }
+    next_player = cat_player_order_adjusted[(current_index + 1) % cat_player_order_adjusted.count]
+    update!(current_player_id: next_player)
   end
 
   def cycle_player_order!

@@ -1,0 +1,8 @@
+robotic_toy:
+  choice:
+    toy: 1
+    litterbox: 1
+petty_generoity:
+  choice:
+    petty:
+      toy: 1

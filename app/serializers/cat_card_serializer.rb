@@ -14,6 +14,7 @@
 #  title             :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  virtual_id        :integer
 #
 class CatCardSerializer < ActiveModel::Serializer
   attributes :id, :title

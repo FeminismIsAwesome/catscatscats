@@ -101,6 +101,7 @@ class CatsGame extends React.Component {
                 currentTurnPlayer: data.current_turn_player,
                 errorNotice: undefined,
                 currentBids: data.current_bids,
+                players: data.players,
                 currentBid: [],
                 currentState: data.state
             });
@@ -119,6 +120,10 @@ class CatsGame extends React.Component {
 
     simulateCatPhase = () => {
         fetch("/cats_games/2/simulate_cat_round", {method: 'post'})
+    }
+
+    simulateCardPlayingRound = () => {
+        fetch("/cats_games/2/simulate_card_playing_round", {method: 'post'})
     }
 
     resetBid = () => {
@@ -175,6 +180,10 @@ class CatsGame extends React.Component {
         return () => {
             this.addToBid(shelterCatId);
         }
+    }
+
+    passCard = () => {
+        fetch(`/cat_cards/pass`, {method: 'post'})
     }
 
     playCard = () => {
@@ -325,6 +334,9 @@ class CatsGame extends React.Component {
                 <p>
                     To burn a card for energy, click a card then press "burn".
                 </p>
+                <p>
+                    Once done doing actions for the round, press pass.
+                </p>
                 <div className="u-flex">
                     <button className="btn btn-primary" onClick={this.playCard}>
                         Play Card
@@ -332,6 +344,10 @@ class CatsGame extends React.Component {
 
                     <button className="btn btn-danger" onClick={this.burnCard}>
                         Burn Card for 1 Energy
+                    </button>
+
+                    <button className="btn btn-danger u-4ml--l" onClick={this.passCard}>
+                        Pass
                     </button>
                 </div>
             </React.Fragment>
@@ -388,6 +404,9 @@ class CatsGame extends React.Component {
                         </button>
                         <button className="btn btn-danger" onClick={this.simulateCatPhase}>
                             Simulate Cat Phase
+                        </button>
+                        <button className="btn btn-warning" onClick={this.simulateCardPlayingRound}>
+                            Simulate Card Playing Round
                         </button>
                         <PlayersList
                             players={players}

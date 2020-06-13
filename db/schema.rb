@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_23_215222) do
+ActiveRecord::Schema.define(version: 2020_06_13_221910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_05_23_215222) do
     t.boolean "self_hosted"
     t.text "tile_image"
     t.text "hover_description"
+    t.integer "virtual_id"
   end
 
   create_table "cat_decks", force: :cascade do |t|
@@ -58,6 +59,8 @@ ActiveRecord::Schema.define(version: 2020_05_23_215222) do
     t.string "state", default: "drafting"
     t.bigint "current_player_id"
     t.jsonb "bids_placed", default: []
+    t.jsonb "cards_played", default: []
+    t.jsonb "players_passed", default: []
   end
 
   create_table "cat_players", force: :cascade do |t|

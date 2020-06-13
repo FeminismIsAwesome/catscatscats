@@ -1,10 +1,6 @@
 class AddCatPhaseSteps < ActiveRecord::Migration[6.0]
   def change
-    # create_table :owned_cats do |t|
-    #   t.timestamps
-    #   t.references :cat_player
-    #   t.references :cat_card
-    #   t.integer :satisfaction_level
-    # end
+    add_column :cat_games, :cards_played, :jsonb, default: []
+    add_column :cat_games, :players_passed, :jsonb, default: []
   end
 end

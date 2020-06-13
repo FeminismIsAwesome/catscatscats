@@ -24,7 +24,7 @@
 #
 class CatPlayer < ApplicationRecord
   belongs_to :cat_game
-  belongs_to :next_player, class_name: "CatPlayer"
+  belongs_to :next_player, class_name: "CatPlayer", optional: true
   has_many :owned_cats
 
   def as_json

@@ -16,11 +16,17 @@ Rails.application.routes.draw do
       get :current_state
       get :refresh_state
       post :simulate_cat_round
+      post :simulate_card_playing_round
     end
   end
   resources :cat_cards do
     member do
       post :pick
+      post :burn
+      post :play
+    end
+    collection do
+      post :pass
     end
   end
   resources :conversations, only: :index do

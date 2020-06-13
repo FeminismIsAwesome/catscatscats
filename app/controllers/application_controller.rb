@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
     @cat_game ||= CatPlayer.find(session[:player_id]).cat_game
   end
 
-  def current_player_id
+  def Ocurrent_player_id
     session[:player_id]
   end
 
