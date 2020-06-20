@@ -2,7 +2,23 @@ robotic_toy:
   choice:
     toy: 1
     litterbox: 1
-petty_generoity:
+petty_generosity:
   choice:
     petty:
+      toy: 1
+buy_1_get_1_free:
+  choice:
+    generous:
+      litterbox: 1
+community_bargains:
+  choice:
+    generous:
+      food: 2
+catnip_bargains:
+  choice:
+    generous:
+      catnip: 2
+buy_1_toy_get_1_free:
+  choice:
+    generous:
       toy: 1

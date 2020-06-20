@@ -6,12 +6,14 @@
 #  actions_provided :jsonb
 #  catnip           :integer          default(0)
 #  energy_count     :integer          default(0)
+#  energy_maximum   :integer          default(10)
 #  food             :integer          default(0)
 #  hand_card_ids    :jsonb
 #  litterbox        :integer          default(0)
 #  name             :string
 #  owned_card_ids   :jsonb
 #  toys             :integer          default(0)
+#  victory_points   :integer          default(0)
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  cat_game_id      :bigint

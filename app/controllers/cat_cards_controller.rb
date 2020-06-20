@@ -29,14 +29,24 @@ class CatCardsController < ApplicationController
     head :ok
   end
 
+  def play_choice
+
+  end
+
   def play
     cat_player.cat_game.cycle_player_order_ignore_passes!
     other_cards = cat_player.hand_card_ids.reject{|id| selected_card.id == id}
-    selected_card.play(cat_player, current_game)
-    cat_player.update!(hand_card_ids: other_cards)
-    current_game.update!(cards_played: current_game.cards_played + [selected_card.id])
-    CatGamesChannel.broadcast_to cat_player.cat_game_id, {message: {new: rand()}, kind: 'refresh_draft_state'}
-    head :ok
+    if !selected_card.has_enough_energy?(cat_player)
+      render json: {error: 'not enough energy. require more catlateral'}
+    elsif selected_card.requires_choice?
+      render json: selected_card.choices.as_json
+    else
+      selected_card.play(cat_player, current_game)
+      cat_player.update!(hand_card_ids: other_cards)
+      current_game.update!(cards_played: current_game.cards_played + [selected_card.id])
+      CatGamesChannel.broadcast_to cat_player.cat_game_id, {message: {new: rand()}, kind: 'refresh_draft_state'}
+      render json: {status: 'done'}
+    end
   end
 
   def pass

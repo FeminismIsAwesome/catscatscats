@@ -5,22 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b77dfc45-72f4-4236-8102-a486caf1dcb1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/models/cat_game_resetter.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/special_card_mechanics.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/snowflake_cards.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/cats.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/cats.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/cat_cards_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/cat_cards_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/cats_games_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/cats_games_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/javascript/packs/components/CatsGame.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/packs/components/CatsGame.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/cat_card.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/cat_card.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/cat_game.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/cat_game.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/cat_player.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/cat_player.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/serializers/cat_card_serializer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/serializers/cat_card_serializer.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/.~lock.cats.csv#" beforeDir="false" afterPath="$PROJECT_DIR$/config/.~lock.cats.csv#" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/application.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/application.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/cats.csv" beforeDir="false" afterPath="$PROJECT_DIR$/config/cats.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200523215222_add_cat_phase_steps.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20200523215222_add_cat_phase_steps.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/special_card_mechanics.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/special_card_mechanics.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -42,11 +41,84 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/special_card_mechanics.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/cat_cards_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="39" column="25" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/cat_card.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="73" column="4" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
+            <state relative-caret-position="468">
+              <caret line="81" column="26" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/snowflake_cards.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/application.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="13" selection-start-line="7" selection-end-line="7" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/environment.rb">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/initializers/filter_parameter_logging.rb">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/cable.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20200618044804_add_victory_points_to_cat.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/cat_player.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -55,13 +127,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cardina</find>
-      <find>cardInHand</find>
-      <find>shelterCard</find>
-      <find>shelterCat</find>
-      <find>pickNum</find>
       <find>card</find>
-      <find>playCard</find>
       <find>selectedCardId</find>
       <find>burn</find>
       <find>burnCard</find>
@@ -84,13 +150,20 @@
       <find>Simulate card p</find>
       <find>simulate_card_playing_round</find>
       <find>simulat</find>
-      <find>simulate</find>
+      <find>.then(</find>
+      <find>refre</find>
+      <find>playCard</find>
+      <find>parse_resource</find>
+      <find>error</find>
+      <find>class=</find>
+      <find>redis</find>
     </findStrings>
     <replaceStrings>
       <replace>tolerance-js</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/config/webpack</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="GeneratorOptions">
@@ -102,9 +175,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/channels/messages_channel.rb" />
-        <option value="$PROJECT_DIR$/app/channels/conversations_channel.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20200515042721_add_qualities_to_cat_cards.rb" />
         <option value="$PROJECT_DIR$/app/models/cat.rb" />
         <option value="$PROJECT_DIR$/config/webpacker.yml" />
         <option value="$PROJECT_DIR$/app/controllers/cats_room_controller.rb" />
@@ -138,21 +208,24 @@
         <option value="$PROJECT_DIR$/app/models/shelter_cat.rb" />
         <option value="$PROJECT_DIR$/app/models/shelter_cat_bid.rb" />
         <option value="$PROJECT_DIR$/app/controllers/shelter_cats_controller.rb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/cats.scss" />
         <option value="$PROJECT_DIR$/app/javascript/packs/components/CatCard.jsx" />
         <option value="$PROJECT_DIR$/db/migrate/20200523215222_add_cat_phase_steps.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/models/cat_game.rb" />
         <option value="$PROJECT_DIR$/app/models/cat_player.rb" />
         <option value="$PROJECT_DIR$/app/models/cat_game_resetter.b" />
         <option value="$PROJECT_DIR$/app/controllers/cats_games_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-        <option value="$PROJECT_DIR$/app/javascript/packs/components/CatsGame.jsx" />
         <option value="$PROJECT_DIR$/db/migrate/20200613221910_add_virtual_index_to_cat_cards.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/cat_cards_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/cat_game_resetter.rb" />
-        <option value="$PROJECT_DIR$/config/special_card_mechanics.yml" />
+        <option value="$PROJECT_DIR$/config/application.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/cats.scss" />
         <option value="$PROJECT_DIR$/app/models/cat_card.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/cat_cards_controller.rb" />
+        <option value="$PROJECT_DIR$/app/javascript/packs/components/CatsGame.jsx" />
+        <option value="$PROJECT_DIR$/config/special_card_mechanics.yml" />
+        <option value="$PROJECT_DIR$/db/migrate/20200618044804_add_victory_points_to_cat.rb" />
+        <option value="$PROJECT_DIR$/app/models/snowflake_cards.rb" />
       </list>
     </option>
   </component>
@@ -173,8 +246,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -191,7 +262,48 @@
               <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
               <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
+              <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
+              <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
+              <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
+              <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="javascript" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
+              <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="javascript" type="462c0819:PsiDirectoryNode" />
+              <item name="packs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
+              <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="javascript" type="462c0819:PsiDirectoryNode" />
+              <item name="packs" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
@@ -217,56 +329,6 @@
             </path>
             <path>
               <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
-              <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
-              <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="react-actioncable-provider" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
-              <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="react-actioncable-provider" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
-              <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="react-string-replace" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
-              <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
-              <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="packs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
-              <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="packs" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
-              <item name="catscatscats" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="packs" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="hello_react-b3436bef650df0333915.js" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="catscatscats" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
@@ -282,6 +344,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -513,18 +577,19 @@
       <workItem from="1590954886962" duration="2349000" />
       <workItem from="1591063553259" duration="1559000" />
       <workItem from="1591848775279" duration="4812000" />
-      <workItem from="1591942733142" duration="3874000" />
+      <workItem from="1591942733142" duration="8021000" />
+      <workItem from="1592351512766" duration="4278000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212134000" />
+    <option name="totallyTimeSpent" value="220559000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1152" height="724" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35045046" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35675675" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="0" />
@@ -571,49 +636,6 @@
     <SUITE FILE_PATH="coverage/catscatscats@Development__catscatscats.rcov" NAME="Development: catscatscats Coverage Results" MODIFIED="1570829740057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="catscatscats" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/conversations_controller.rb" />
-    <entry file="file://$PROJECT_DIR$/config/cable.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/actioncable-6.0.3/lib/action_cable/channel/base.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="204" column="24" selection-start-line="204" selection-start-column="12" selection-end-line="204" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/channels/application_cable/channel.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="42" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/initializers/cors.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20200516203922_make_cat_deck.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/players/new.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20200518001501_add_cat_card_qualities.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -790,13 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/cats.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="408" column="1" selection-start-line="408" selection-start-column="1" selection-end-line="408" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/javascript/packs/components/CatCard.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -804,13 +819,6 @@
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -839,16 +847,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/packs/components/CatsGame.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="407" column="98" selection-start-line="407" selection-start-column="98" selection-end-line="407" selection-end-column="98" />
-          <folding>
-            <element signature="e#0#84#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -887,30 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/cat_player.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="12" />
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="9" />
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="7" />
-          <caret line="13" column="7" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/special_card_mechanics.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/cat_cards_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="45" column="72" selection-start-line="45" selection-start-column="72" selection-end-line="45" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/cat_game_resetter.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
@@ -918,10 +892,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/images/catscatscats.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/cats.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6345">
+          <caret line="423" column="19" selection-start-line="423" selection-start-column="19" selection-end-line="423" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascript/packs/components/CatsGame.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="197" column="17" selection-start-line="197" selection-start-column="17" selection-end-line="197" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/cat_cards_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="39" column="25" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/special_card_mechanics.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/cat_card.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="73" column="4" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
+        <state relative-caret-position="468">
+          <caret line="81" column="26" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/cat_player.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20200618044804_add_victory_points_to_cat.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/snowflake_cards.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environment.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/initializers/filter_parameter_logging.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/cable.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
         </state>
       </provider>
     </entry>

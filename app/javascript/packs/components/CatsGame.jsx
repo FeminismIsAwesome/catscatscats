@@ -3,6 +3,7 @@ import PlayerMat from "./PlayerMat";
 import CatCard from "./CatCard";
 import PlayersList from "./PlayersList";
 import React from 'react';
+import Popup from "reactjs-popup";
 
 const TEST_CARDS = ['Treat', 'Lightning Rod', 'Vanilla', 'Chocolate', 'Spotty'];
 
@@ -186,9 +187,79 @@ class CatsGame extends React.Component {
         fetch(`/cat_cards/pass`, {method: 'post'})
     }
 
+    resetCard = () => {
+        this.setState({
+            currentChoice: undefined
+        })
+    }
+
+    renderChoiceValues = (choice) => {
+        var keys = Object.keys(choice.generous);
+        return keys.map((key) => choice.generous[key] + " " + key);
+    }
+
+    renderChoice = (choice) => {
+        const { selectedCardId, currentPlayer, players } = this.state;
+        if(choice) {
+            const hasGenerous = !!choice.generous;
+            const otherPlayers = players.filter((player) => player.id !== currentPlayer.id);
+            return <Popup
+                open={!!choice}
+                position="right center"
+                closeOnDocumentClick={false}
+                onClose={this.resetCard}
+            >
+                <div className="js-big-window">
+                    <span>
+                        {hasGenerous && "Generous"}
+                    </span>
+                    <p>
+                        {hasGenerous && "Select another player who will be receiving the benefit: " + this.renderChoiceValues(choice)}
+                    </p>
+                    <div className="u-flex">
+                        {otherPlayers.map((player) => <button className="btn btn-danger" onClick={() => {this.playChoice(player.name)}}> {player.name} </button>)}
+                    </div>
+                    <button onClick={this.resetCard}>Close</button>
+                </div>
+            </Popup>
+        }
+    }
+
+    playChoice = (choice) => {
+        const {selectedCardId} = this.state;
+        fetch(`/cat_cards/${selectedCardId}/play_choice`, {
+            method: 'post',
+            body: JSON.stringify({choice: choice}),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then((data) => {
+            this.setState({
+                currentChoice: undefined
+            });
+        })
+    }
+
     playCard = () => {
         const {selectedCardId} = this.state;
-        fetch(`/cat_cards/${selectedCardId}/play`, {method: 'post'})
+        fetch(`/cat_cards/${selectedCardId}/play`, {method: 'post'}).then(function (res) {
+            return res.json();
+        }).then((data) => {
+            if(data.error) {
+                this.setState({
+                    errorNotice: data.error
+                })
+            } else if(data.status) {
+                this.setState({
+                    errorNotice: undefined
+                });
+            //    done
+            } else {
+                this.setState({
+                    currentChoice: data
+                });
+            }
+        })
     }
 
     burnCard = () => {
@@ -276,7 +347,7 @@ class CatsGame extends React.Component {
     }
 
     renderCurrentDecisions = () => {
-        const {currentDraftIndex, currentState, errorNotice, cardRepository, currentDraftHand, showLoadingForDraft, doneDrafting, currentTurnPlayer} = this.state;
+        const {currentDraftIndex, currentChoice, currentState, errorNotice, cardRepository, currentDraftHand, showLoadingForDraft, doneDrafting, currentTurnPlayer} = this.state;
         const catCards = currentDraftHand;
 
 
@@ -350,6 +421,13 @@ class CatsGame extends React.Component {
                         Pass
                     </button>
                 </div>
+                {errorNotice &&
+                <p className="alert alert-danger">
+                    {errorNotice}
+                    <i className="fa fa-times u-4ml--l" onClick={this.dismissAlert}/>
+                </p>
+                }
+                {this.renderChoice(currentChoice)}
             </React.Fragment>
         }
     }

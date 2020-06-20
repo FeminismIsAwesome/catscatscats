@@ -12,6 +12,7 @@
     "react-dom": "^16.13.1",
     "react-string-replace": "^0.4.4",
     "react-tooltip": "^4.2.6",
+    "reactjs-popup": "^1.5.0",
     "trix": "^1.2.0"
   },
   "devDependencies": {

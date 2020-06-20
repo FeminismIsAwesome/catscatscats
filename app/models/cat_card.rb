@@ -63,7 +63,7 @@ class CatCard < ApplicationRecord
   end
 
   def choices
-
+    special_rules['choice']
   end
 
   def play_response(player, game, choice)
@@ -71,33 +71,68 @@ class CatCard < ApplicationRecord
   end
 
   def requires_choice?
+    choices.present?
+  end
 
+  def special_rules
+    @special_rules ||= SPECIAL_RULES[title.downcase.strip.gsub(" ","_")] || {}
+  end
+
+  def has_enough_energy?(player)
+    player.energy_count >= number_tl.to_i
   end
 
   private
 
   def parse_resource(player)
     unit_shifts = Hash.new(0)
-    number_tr.chars.each do |letter|
-      case letter
-      when 'F'
-        unit_shifts['food'] += 1
-      when 'C'
-        unit_shifts['catnip'] += 1
-      when 'T'
-        unit_shifts['toys'] += 1
-      when 'L'
-        unit_shifts['litterbox'] += 1
-      when 'E'
-        unit_shifts['energy_count'] += 1
+    if !number_tr.include?('-')
+      number_tr.chars.each do |letter|
+        case letter
+        when 'F'
+          unit_shifts['food'] += 1
+        when 'C'
+          unit_shifts['catnip'] += 1
+        when 'T'
+          unit_shifts['toys'] += 1
+        when 'L'
+          unit_shifts['litterbox'] += 1
+        when 'E'
+          unit_shifts['energy_count'] += 1
+        end
+      end
+      player.update!(
+          food: player.food + unit_shifts['food'],
+          catnip: player.catnip + unit_shifts['catnip'],
+          toys: player.toys + unit_shifts['toys'],
+          litterbox: player.litterbox + unit_shifts['litterbox'],
+          energy_count: player.energy_count + unit_shifts['energy_count']
+      )
+    else
+      number_tr_negative = number_tr.gsub("-", "")
+      number_tr_negative.chars.each do |letter|
+        case letter
+        when 'F'
+          unit_shifts['food'] -= 1
+        when 'C'
+          unit_shifts['catnip'] -= 1
+        when 'T'
+          unit_shifts['toys'] -= 1
+        when 'L'
+          unit_shifts['litterbox'] -= 1
+        when 'E'
+          unit_shifts['energy_count'] -= 1
+        end
+      end
+      player.cat_game.cat_players.where.not(id: player.id).each do |other_player|
+        other_player.update!(
+            food: [other_player.food + unit_shifts['food'], 0].max,
+            catnip: [other_player.catnip + unit_shifts['catnip'],0].max,
+            toys: [other_player.toys + unit_shifts['toys'],0].max,
+            litterbox: [other_player.litterbox + unit_shifts['litterbox'],0].max,
+            energy_count: [other_player.energy_count + unit_shifts['energy_count'],0].max
+        )
       end
     end
-    player.update!(
-              food: player.food + unit_shifts['food'],
-              catnip: player.catnip + unit_shifts['catnip'],
-              toys: player.toys + unit_shifts['toys'],
-              litterbox: player.litterbox + unit_shifts['litterbox'],
-              energy_count: player.energy_count + unit_shifts['energy_count']
-    )
   end
 end

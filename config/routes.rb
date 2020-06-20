@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       post :pick
       post :burn
       post :play
+      post :play_choice
     end
     collection do
       post :pass
