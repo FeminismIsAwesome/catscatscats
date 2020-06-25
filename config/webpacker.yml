@@ -33,6 +33,7 @@ default: &default
     - .woff2
 
   extensions:
+    - .erb
     - .jsx
     - .mjs
     - .js
@@ -47,6 +48,7 @@ default: &default
     - .gif
     - .jpeg
     - .jpg
+    - .js.erb
 
 development:
   <<: *default

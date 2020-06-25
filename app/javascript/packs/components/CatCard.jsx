@@ -12,7 +12,7 @@ import MolassessImage from 'images/molasses.png';
 import WillowImage from 'images/willow.jpg';
 import PirateImage from 'images/pirate.jpg';
 import RalphImage from 'images/ralphtest.png';
-import LucyIamge from 'images/lucy.jpg';
+import LucyImage from 'images/lucy.jpg';
 import SalemImage from 'images/salem.jpg';
 import OliveImage from 'images/olive.png';
 
@@ -22,7 +22,7 @@ const imageMap = {
     'molasses.png': MolassessImage,
     'pirate.jpg':PirateImage,
     'ralphtest.png':RalphImage,
-    'lucy.jpg':LucyIamge,
+    'lucy.jpg':LucyImage,
     'salem.jpg':SalemImage,
     'olive.png': OliveImage
 };
