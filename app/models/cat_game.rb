@@ -92,14 +92,20 @@ class CatGame < ApplicationRecord
     update!(current_player_id: suggested_order)
   end
 
-  def start_drafting_phase(random_players)
+  def start_drafting_phase(random_players, reset_numbers=true)
     random_players.each_with_index do |player, index|
       cards = cat_deck.return_next_action_cards(7)
-      player.update!(energy_count: 10, catnip:0,
-                     food:0,
-                     litterbox:0,
-                     toys: 0,
-                     hand_card_ids: [], actions_provided: [cards.map(&:id)], owned_card_ids: [], next_player_id: random_players[(index + 1)% random_players.size].id)
+      player.update!(energy_count: player.energy_maximum, actions_provided: [cards.map(&:id)],next_player_id: random_players[(index + 1)% random_players.size].id)
+      if reset_numbers
+        player.update!(
+            catnip:0,
+            food:0,
+            litterbox:0,
+            owned_card_ids: [],
+            toys: 0,
+            hand_card_ids: [],
+            )
+      end
     end
   end
 

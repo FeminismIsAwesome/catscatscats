@@ -19,7 +19,7 @@ class OwnedCat < ApplicationRecord
   belongs_to :cat_player
 
   def shift(amount: 0)
-    update!(happiness_level: [happiness_level + amount, 1].min)
+    update!(happiness_level: [happiness_level + amount, 1].max)
   end
 
   def unhappy?
@@ -101,6 +101,7 @@ class OwnedCat < ApplicationRecord
         unit_shifts['energy_count'] += 1
       end
     end
+    unit_shifts
   end
 
 end

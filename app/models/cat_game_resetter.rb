@@ -14,6 +14,12 @@ class CatGameResetter
     end
   end
 
+  def move_to_next_round
+    @cat_game.update!(state: 'drafting')
+    @cat_game.start_drafting_phase(random_players, false)
+    @cat_game.output_kitties
+  end
+
   def start_game
     wipe_board
     @cat_game.generate_deck

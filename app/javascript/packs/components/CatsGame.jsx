@@ -467,6 +467,15 @@ class CatsGame extends React.Component {
                 }
                 {this.renderChoice(currentChoice)}
             </React.Fragment>
+        } else if(currentState === 'cat_feeding') {
+            return <React.Fragment>
+                <p>
+                    Welcome to the Cat Feeding phase!
+                </p>
+                <p>
+                    Tell Ian which cats you are satisfying needs/greeds of, and he will run the code to process the results.
+                </p>
+            </React.Fragment>
         }
     }
 
