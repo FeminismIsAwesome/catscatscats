@@ -20,7 +20,9 @@ function uuidv4() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('/cats_games/2/current_state').then(res => res.json())
+    const slash_splits = document.URL.split("/");
+
+    fetch('/cats_games/' + slash_splits[slash_splits.length-1] + '/current_state').then(res => res.json())
         .then(response => {
         ReactDOM.render(
             <ActionCableProvider url={API_WS_ROOT}>
