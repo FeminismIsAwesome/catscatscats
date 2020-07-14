@@ -32,7 +32,8 @@ class CatGame < ApplicationRecord
 
   def check_move_to_cat_picking!
     if cat_players.count == cat_players.select{|cp| cp.hand_card_ids.count == 7}.count
-      update!(state: 'cat_bidding')
+      update!(state: 'cat_bidding',bids_placed: [])
+      next_cats_phase
     end
   end
 

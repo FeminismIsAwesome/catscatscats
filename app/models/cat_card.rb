@@ -30,9 +30,6 @@ class CatCard < ApplicationRecord
   end
 
   def seed_cats
-    CatCard.destroy_all
-    CatDeck.destroy_all
-    ShelterCat.destroy_all
     cat_index = 0
     @cats = CSV.read(CATS_PATH,headers: true).each do |cat|
       cat_card = CatCard.find_or_initialize_by(virtual_id: cat_index)
@@ -67,7 +64,23 @@ class CatCard < ApplicationRecord
   end
 
   def play_response(player, game, choice)
-    
+    choices.each do |subtype, amounts|
+      if subtype == 'generous'
+        player_to_receive = game.cat_players.find_by(name: choice)
+        amounts.each do |bonus_type,amount|
+          player_to_receive.increment_category(bonus_type, amount)
+        end
+      elsif subtype == 'petty'
+        players_to_receive = game.cat_players.where.not(name: choice)
+        players_to_receive.each do |player_to_receive|
+          amounts.each do |bonus_type,amount|
+            player_to_receive.increment_category(bonus_type, amount)
+          end
+        end
+      elsif subtype == 'switch'
+        player.increment_category(choice[:bonus_type], choice[:amount])
+      end
+    end
   end
 
   def requires_choice?

@@ -4,6 +4,10 @@ import CatCard from "./CatCard";
 import PlayersList from "./PlayersList";
 import React from 'react';
 import Popup from "reactjs-popup";
+import GenerousPrompt from "./GenerousPrompt";
+import PettyPrompt from "./PettyPrompt";
+import IrritatePrompt from "./IrritatePrompt";
+import SwitchPrompt from "./SwitchPrompt";
 
 const TEST_CARDS = ['Treat', 'Lightning Rod', 'Vanilla', 'Chocolate', 'Spotty'];
 
@@ -199,10 +203,37 @@ class CatsGame extends React.Component {
     }
 
     renderChoice = (choice) => {
-        const { selectedCardId, currentPlayer, players } = this.state;
+        const { selectedCardId, currentPlayer, players, cardRepository } = this.state;
         if(choice) {
             const hasGenerous = !!choice.generous;
-            const otherPlayers = players.filter((player) => player.id !== currentPlayer.id);
+            const hasIrritate = !!choice.irritate;
+            const hasPetty = !!choice.petty;
+            const hasSwitch = !!choice.switch;
+            let PopupContent;
+            if(hasGenerous) {
+                const otherPlayers = players.filter((player) => player.id !== currentPlayer.id);
+                PopupContent = <GenerousPrompt playChoice={this.playChoice}
+                                               choice={choice}
+                                               otherPlayers={otherPlayers}
+                                               resetCard={this.resetCard}
+                />;
+            } else if(hasIrritate) {
+                PopupContent = <IrritatePrompt playChoice={this.playChoice}
+                                               choice={choice}
+                                               currentPlayer={currentPlayer}
+                                               cardRepository={cardRepository}
+                                               resetCard={this.resetCard} />;
+            } else if(hasPetty) {
+                const otherPlayers = players.filter((player) => player.id !== currentPlayer.id);
+                PopupContent = <PettyPrompt playChoice={this.playChoice}
+                                            choice={choice}
+                                            otherPlayers={otherPlayers}
+                                            resetCard={this.resetCard} />;
+            } else if(hasSwitch) {
+                PopupContent = <SwitchPrompt playChoice={this.playChoice}
+                                             choice={choice}
+                                             resetCard={this.resetCard} />;
+            }
             return <Popup
                 open={!!choice}
                 position="right center"
@@ -210,16 +241,7 @@ class CatsGame extends React.Component {
                 onClose={this.resetCard}
             >
                 <div className="js-big-window">
-                    <span>
-                        {hasGenerous && "Generous"}
-                    </span>
-                    <p>
-                        {hasGenerous && "Select another player who will be receiving the benefit: " + this.renderChoiceValues(choice)}
-                    </p>
-                    <div className="u-flex">
-                        {otherPlayers.map((player) => <button className="btn btn-danger" onClick={() => {this.playChoice(player.name)}}> {player.name} </button>)}
-                    </div>
-                    <button onClick={this.resetCard}>Close</button>
+                    { PopupContent }
                 </div>
             </Popup>
         }
@@ -242,7 +264,8 @@ class CatsGame extends React.Component {
 
     playCard = () => {
         const {selectedCardId} = this.state;
-        fetch(`/cat_cards/${selectedCardId}/play`, {method: 'post'}).then(function (res) {
+        fetch(`/cat_cards/${selectedCardId}/play`, {method: 'post'}).then( (res) => {
+            this.forceDraftRefresh();
             return res.json();
         }).then((data) => {
             if(data.error) {
@@ -380,6 +403,9 @@ class CatsGame extends React.Component {
                         <button className="btn btn-primary" onClick={this.bidOnCats}>
                             Seal in Bid
                         </button>
+                        <button className="btn btn-secondary" onClick={this.bidOnCats}>
+                            Pass
+                        </button>
                         <button className="button btn-danger u-4ml--l" onClick={this.resetBid}>
                             Undo current bid
                         </button>
@@ -477,6 +503,9 @@ class CatsGame extends React.Component {
 
                     </div>
                     <div className="col-3">
+                        <button className="btn btn-secondary" onClick={this.forceDraftRefresh}>
+                            CLICK THIS IF YOU THINK SOMEONE DID SOMETHING AND ITS NOT UPDATING
+                        </button>
                         <button className="btn btn-primary" onClick={this.startGame}>
                             START GAME
                         </button>

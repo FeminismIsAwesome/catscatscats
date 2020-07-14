@@ -1,7 +1,8 @@
 robotic_toy:
   choice:
-    toy: 1
-    litterbox: 1
+    switch:
+      toy: 1
+      litterbox: 1
 petty_generosity:
   choice:
     petty:
@@ -22,3 +23,7 @@ buy_1_toy_get_1_free:
   choice:
     generous:
       toy: 1
+sketchy_food:
+  choice:
+    irritate:
+      shift: -1

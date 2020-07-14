@@ -23,6 +23,7 @@ class CatGameResetter
       toys: 0,
      hand_card_ids: [], actions_provided: [cards.map(&:id)], owned_card_ids: [], next_player_id: random_players[(index + 1)% random_players.size].id)
     end
+    @cat_game.update!(state: 'drafting')
   end
 
   def simulate_cat_round

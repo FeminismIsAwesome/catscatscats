@@ -15,12 +15,7 @@ class CatsGamesController < ApplicationController
   end
 
   def current_state
-    player = CatPlayer.find_or_initialize_by(id: session[:player_id])
-    render json: {
-        player: player.as_json,
-        players: @cat_game.cat_players.map(&:as_json),
-        cardRepository: CatCard.hash_version
-    }
+    render json: state_json.merge( cardRepository: CatCard.hash_version)
   end
 
   def start_game
@@ -42,8 +37,14 @@ class CatsGamesController < ApplicationController
   end
 
   def refresh_state
+    render json: state_json
+  end
+
+  private
+
+  def state_json
     player = CatPlayer.find_or_initialize_by(id: session[:player_id])
-    render json: {
+    {
         player: player.as_json,
         players: @cat_game.cat_players.map(&:as_json),
         current_draft_hand: player.current_draft_hand,
@@ -56,8 +57,6 @@ class CatsGamesController < ApplicationController
         current_turn_player: @cat_game.cat_players.find_by(id: @cat_game.current_player_id).as_json
     }
   end
-
-  private
 
   def find_room
     @cat_game = CatGame.find_or_create_by(id: params[:id])

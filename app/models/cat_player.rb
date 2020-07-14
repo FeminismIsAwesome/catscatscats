@@ -34,6 +34,10 @@ class CatPlayer < ApplicationRecord
                   owned_cats: owned_cats.map(&:as_json)})
   end
 
+  def add_card_to_hand(card)
+    self.hand_card_ids += [card.id]
+  end
+
   def current_draft_hand
     actions_provided[current_draft_index]
   end
@@ -46,8 +50,18 @@ class CatPlayer < ApplicationRecord
     hand_card_ids.count
   end
 
+  def player_drafting?
+    actions_provided.count < 7
+  end
+
   def display_loading?
-    !cat_game.drafting? && actions_provided.count <= hand_card_ids.count
+    cat_game.drafting? && current_draft_index >= actions_provided.count
+  end
+
+  def increment_category(category, num)
+    current_value = self.attributes[category]
+    new_value = [current_value + num, 0].max
+    update!(category => new_value)
   end
 
   def adjust_energy(num)
