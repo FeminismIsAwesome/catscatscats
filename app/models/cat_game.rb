@@ -24,7 +24,7 @@ class CatGame < ApplicationRecord
   def generate_deck
     deck = CatDeck.first_or_initialize(cat_game_id: self.id)
 
-    generated_card_ids = CatCard.where(kind: ACTION_DECK_TYPES).order("RANDOM()").pluck(:id)
+    generated_card_ids = CatCard.where(kind: ACTION_DECK_TYPES).where.not(virtual_id: ignore_pulling_these_cards_for_now_virtual_ids).order("RANDOM()").pluck(:id)
     generated_cat_card_ids = CatCard.where(kind: CAT_DECK_TYPES).order("RANDOM()").pluck(:id)
     deck.save!
     deck.update!(deck_pile: generated_card_ids, cats_draw_pile: generated_cat_card_ids)
@@ -34,6 +34,18 @@ class CatGame < ApplicationRecord
     if cat_players.count == cat_players.select{|cp| cp.hand_card_ids.count == 7}.count
       update!(state: 'cat_bidding',bids_placed: [])
       next_cats_phase
+    end
+  end
+
+  def check_move_to_upkeep!
+    if cat_players.count == players_passed.count
+      update!(state: 'cat_upkeep')
+    end
+  end
+
+  def check_if_everyone_upkeeped!
+    if cat_players.count ==
+        update!(state: 'drafting')
     end
   end
 
@@ -107,5 +119,11 @@ class CatGame < ApplicationRecord
 
   def drafting?
     state == 'drafting'
+  end
+
+  private
+
+  def ignore_pulling_these_cards_for_now_virtual_ids
+    [95,96,97,98,125,126]
   end
 end

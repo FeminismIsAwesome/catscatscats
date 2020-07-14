@@ -209,6 +209,7 @@ class CatsGame extends React.Component {
             const hasIrritate = !!choice.irritate;
             const hasPetty = !!choice.petty;
             const hasSwitch = !!choice.switch;
+            const hasSteal = !!choice.remove;
             let PopupContent;
             if(hasGenerous) {
                 const otherPlayers = players.filter((player) => player.id !== currentPlayer.id);
@@ -233,6 +234,12 @@ class CatsGame extends React.Component {
                 PopupContent = <SwitchPrompt playChoice={this.playChoice}
                                              choice={choice}
                                              resetCard={this.resetCard} />;
+            } else if(hasSteal) {
+                const otherPlayers = players.filter((player) => player.id !== currentPlayer.id);
+                PopupContent = <StealPrompt playChoice={this.playChoice}
+                                            choice={choice}
+                                            otherPlayers={otherPlayers}
+                                            resetCard={this.resetCard} />;
             }
             return <Popup
                 open={!!choice}

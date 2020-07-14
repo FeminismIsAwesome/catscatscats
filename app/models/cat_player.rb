@@ -2,23 +2,24 @@
 #
 # Table name: cat_players
 #
-#  id               :bigint           not null, primary key
-#  actions_provided :jsonb
-#  catnip           :integer          default(0)
-#  energy_count     :integer          default(0)
-#  energy_maximum   :integer          default(10)
-#  food             :integer          default(0)
-#  hand_card_ids    :jsonb
-#  litterbox        :integer          default(0)
-#  name             :string
-#  owned_card_ids   :jsonb
-#  toys             :integer          default(0)
-#  victory_points   :integer          default(0)
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  cat_game_id      :bigint
-#  next_player_id   :bigint
-#  remote_id        :string
+#  id                :bigint           not null, primary key
+#  actions_provided  :jsonb
+#  catnip            :integer          default(0)
+#  energy_count      :integer          default(0)
+#  energy_maximum    :integer          default(10)
+#  food              :integer          default(0)
+#  hand_card_ids     :jsonb
+#  litterbox         :integer          default(0)
+#  name              :string
+#  owned_card_ids    :jsonb
+#  toys              :integer          default(0)
+#  upkeeps_performed :integer
+#  victory_points    :integer          default(0)
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  cat_game_id       :bigint
+#  next_player_id    :bigint
+#  remote_id         :string
 #
 # Indexes
 #
@@ -67,5 +68,9 @@ class CatPlayer < ApplicationRecord
   def adjust_energy(num)
     self.energy_count += num
     save!
+  end
+
+  def run_background_cards
+
   end
 end

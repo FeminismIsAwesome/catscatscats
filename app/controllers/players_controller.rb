@@ -17,4 +17,16 @@ class PlayersController < ApplicationController
     session[:player_id] = cat_player.id
     redirect_to cats_game_path(params[:cat_game_id])
   end
+
+  def feed_cats
+    decisions = params[:feeding_decisions].to_unsafe_h
+    decisions.each do |decision|
+      owned_cat = current_player.owned_cats.find(decision[:owned_cat_id])
+      owned_cat.decide(decision)
+    end
+    current_player.run_background_cards
+    current_game.check_if_everyone_upkeeped!
+    CatGamesChannel.broadcast_to current_game.id, {message: {empty: rand()}, kind: 'refresh_draft_state'}
+    head :ok
+  end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_18_044804) do
+ActiveRecord::Schema.define(version: 2020_07_14_075556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 2020_06_18_044804) do
     t.jsonb "actions_provided"
     t.integer "victory_points", default: 0
     t.integer "energy_maximum", default: 10
+    t.integer "upkeeps_performed"
     t.index ["cat_game_id"], name: "index_cat_players_on_cat_game_id"
   end
 

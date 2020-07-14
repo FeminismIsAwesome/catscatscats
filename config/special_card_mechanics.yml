@@ -27,3 +27,32 @@ sketchy_food:
   choice:
     irritate:
       shift: -1
+got_into_the_goods:
+  choice:
+    remove:
+      catnip: 3
+lost_in_the_void:
+  choice:
+    remove:
+      catnip: 3
+spoiled_salami:
+  choice:
+    remove:
+      catnip: 3
+i_didnt_already_eat_yet:
+  choice:
+    remove:
+      catnip: 3
+taking_your_shit:
+  choice:
+    remove:
+      litterbox: 2
+smuggling_the_goods:
+  choice:
+    remove:
+      catnip: 4
+pleasing_your_cat:
+  choice:
+    remove:
+      food: 4
+

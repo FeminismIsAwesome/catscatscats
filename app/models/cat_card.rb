@@ -99,6 +99,7 @@ class CatCard < ApplicationRecord
 
   def parse_resource(player)
     unit_shifts = Hash.new(0)
+    number_tr = number_tr.strip
     if !number_tr.include?('-')
       number_tr.chars.each do |letter|
         case letter

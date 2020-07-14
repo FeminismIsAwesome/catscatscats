@@ -51,6 +51,8 @@ class CatCardsController < ApplicationController
       selected_card.play(cat_player, current_game)
       cat_player.update!(hand_card_ids: other_cards)
       current_game.update!(cards_played: current_game.cards_played + [selected_card.id])
+      current_game.check_move_to_upkeep!
+
       CatGamesChannel.broadcast_to cat_player.cat_game_id, {message: {new: rand()}, kind: 'refresh_draft_state'}
       render json: {status: 'done'}
     end
