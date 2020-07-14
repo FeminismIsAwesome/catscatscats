@@ -60,9 +60,30 @@ class OwnedCat < ApplicationRecord
     else
       shift(amount: -2)
     end
+    score_cat
+  end
+
+  def score_cat
+    if happiness_level == 1
+      modifier = -2
+    elsif happiness_level == 2
+      modifier = -1
+    elsif happiness_level == 3
+      modifier = 0
+    elsif happiness_level == 4
+      modifier = 1
+    else
+      modifier = 2
+    end
+    shift = modifier + get_vps
+    cat_player.update!(victory_points: cat_player.victory_points + shift)
   end
 
   private
+
+  def get_vps
+    cat_card.description.scan("VP").length
+  end
 
   def derive_shifts(number)
     unit_shifts = Hash.new(0)

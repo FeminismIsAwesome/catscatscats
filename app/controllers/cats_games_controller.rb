@@ -52,6 +52,7 @@ class CatsGamesController < ApplicationController
         selected_cards: player.hand_card_ids,
         state: @cat_game.state,
         shelter_cats: @cat_game.shelter_cat_map,
+        shelter_cats_array: @cat_game.shelter_cats,
         display_loading: player.display_loading?,
         current_bids: current_player.bids.map(&:as_json),
         current_turn_player: @cat_game.cat_players.find_by(id: @cat_game.current_player_id).as_json

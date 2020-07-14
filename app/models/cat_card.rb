@@ -53,6 +53,10 @@ class CatCard < ApplicationRecord
     if number_tr.present?
       parse_resource(player)
     end
+    if kind == 'item'
+      player.owned_card_ids << id
+      player.save!
+    end
   end
 
   def has_choice?
@@ -71,7 +75,7 @@ class CatCard < ApplicationRecord
           player_to_receive.increment_category(bonus_type, amount)
         end
       elsif subtype == 'petty'
-        players_to_receive = game.cat_players.where.not(name: choice)
+        players_to_receive = game.cat_players.where.not(name: choice).where.not(id: player.id)
         players_to_receive.each do |player_to_receive|
           amounts.each do |bonus_type,amount|
             player_to_receive.increment_category(bonus_type, amount)
@@ -99,9 +103,9 @@ class CatCard < ApplicationRecord
 
   def parse_resource(player)
     unit_shifts = Hash.new(0)
-    number_tr = number_tr.strip
-    if !number_tr.include?('-')
-      number_tr.chars.each do |letter|
+    stripped_number_tr = number_tr.strip
+    if !stripped_number_tr.include?('-')
+      stripped_number_tr.chars.each do |letter|
         case letter
         when 'F'
           unit_shifts['food'] += 1
@@ -123,7 +127,7 @@ class CatCard < ApplicationRecord
           energy_count: player.energy_count + unit_shifts['energy_count']
       )
     else
-      number_tr_negative = number_tr.gsub("-", "")
+      number_tr_negative = number_tr.strip.gsub("-", "")
       number_tr_negative.chars.each do |letter|
         case letter
         when 'F'

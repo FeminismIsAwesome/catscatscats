@@ -1,12 +1,24 @@
 robotic_toy:
   choice:
     switch:
-      toy: 1
+      toys: 1
       litterbox: 1
 petty_generosity:
   choice:
     petty:
-      toy: 1
+      food: 3
+catnip_not_for_you:
+  choice:
+    petty:
+      catnip: 3
+toys_not_for_you:
+  choice:
+    petty:
+      toys: 1
+litterbox_not_for_you:
+  choice:
+    petty:
+      litterbox: 1
 buy_1_get_1_free:
   choice:
     generous:
@@ -22,7 +34,7 @@ catnip_bargains:
 buy_1_toy_get_1_free:
   choice:
     generous:
-      toy: 1
+      toys: 1
 sketchy_food:
   choice:
     irritate:
@@ -34,7 +46,7 @@ got_into_the_goods:
 lost_in_the_void:
   choice:
     remove:
-      catnip: 3
+      catnip: 2
 spoiled_salami:
   choice:
     remove:
@@ -55,4 +67,12 @@ pleasing_your_cat:
   choice:
     remove:
       food: 4
-
+stolen_dreams:
+  choice:
+    remove:
+      catnip: 2
+cup_of_water:
+  choice:
+    switch:
+      catnip: 2
+      food: 2

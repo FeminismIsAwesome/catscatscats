@@ -2,8 +2,8 @@ import React from "react";
 
 class StealPrompt extends React.Component {
     renderChoiceValues = (choice) => {
-        var keys = Object.keys(choice.petty);
-        return keys.map((key) => choice.petty[key] + " " + key);
+        var keys = Object.keys(choice.remove);
+        return keys.map((key) => choice.remove[key] + " " + key);
     }
 
     render = () => {

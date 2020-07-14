@@ -9,20 +9,16 @@ class CatGameResetter
   def wipe_board
     OwnedCat.delete_all
     @cat_game.shelter_cats.destroy_all
-
+    @cat_game.cat_players.each do |player|
+      player.update!(owned_card_ids: [], hand_card_ids: [])
+    end
   end
 
   def start_game
     wipe_board
     @cat_game.generate_deck
-    random_players.each_with_index do |player, index|
-      cards = @cat_game.cat_deck.return_next_action_cards(7)
-      player.update!(energy_count: 10, catnip:0,
-      food:0,
-      litterbox:0,
-      toys: 0,
-     hand_card_ids: [], actions_provided: [cards.map(&:id)], owned_card_ids: [], next_player_id: random_players[(index + 1)% random_players.size].id)
-    end
+    @cat_game.start_drafting_phase(random_players)
+    @cat_game.output_kitties
     @cat_game.update!(state: 'drafting')
   end
 

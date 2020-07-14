@@ -44,7 +44,8 @@ class CatGame < ApplicationRecord
   end
 
   def check_if_everyone_upkeeped!
-    if cat_players.count ==
+    if cat_players.map(&:upkeeps_performed).count == 1
+        start_drafting_phase(random_players)
         update!(state: 'drafting')
     end
   end
@@ -74,18 +75,32 @@ class CatGame < ApplicationRecord
     shelter_map
   end
 
-  def next_cats_phase
+  def output_kitties
     cats_to_put_out = cat_players.count + 1
     next_cat_cards = cat_deck.return_next_cat_cards(cats_to_put_out)
 
     next_cat_cards.each do |cat|
       ShelterCat.create!(cat_game: self, cat_card: cat)
     end
+  end
+
+  def next_cats_phase
     cat_deck.update!(cat_player_order: cat_players.order("random()").map(&:id))
   end
 
   def start_player_order(suggested_order=cat_deck.cat_player_order.first)
     update!(current_player_id: suggested_order)
+  end
+
+  def start_drafting_phase(random_players)
+    random_players.each_with_index do |player, index|
+      cards = cat_deck.return_next_action_cards(7)
+      player.update!(energy_count: 10, catnip:0,
+                     food:0,
+                     litterbox:0,
+                     toys: 0,
+                     hand_card_ids: [], actions_provided: [cards.map(&:id)], owned_card_ids: [], next_player_id: random_players[(index + 1)% random_players.size].id)
+    end
   end
 
   def cycle_player_order_ignore_passes!
@@ -122,6 +137,10 @@ class CatGame < ApplicationRecord
   end
 
   private
+
+  def random_players
+    cat_players.order("random()")
+  end
 
   def ignore_pulling_these_cards_for_now_virtual_ids
     [95,96,97,98,125,126]

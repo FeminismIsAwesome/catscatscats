@@ -8,6 +8,9 @@ import GenerousPrompt from "./GenerousPrompt";
 import PettyPrompt from "./PettyPrompt";
 import IrritatePrompt from "./IrritatePrompt";
 import SwitchPrompt from "./SwitchPrompt";
+import StealPrompt from "./StealPrompt";
+import CatPlayerMat from './CatPlayerMat'
+import ShelterMat from './ShelterMat'
 
 const TEST_CARDS = ['Treat', 'Lightning Rod', 'Vanilla', 'Chocolate', 'Spotty'];
 
@@ -45,7 +48,8 @@ class CatsGame extends React.Component {
             currentBid: [],
             currentDraftIndex: 0,
             errorNotice: undefined,
-            currentTurnPlayer: undefined
+            currentTurnPlayer: undefined,
+            shelterCatsArray: props.gameData.shelter_cats_array,
         };
     }
 
@@ -108,7 +112,8 @@ class CatsGame extends React.Component {
                 currentBids: data.current_bids,
                 players: data.players,
                 currentBid: [],
-                currentState: data.state
+                currentState: data.state,
+                shelterCatsArray: data.shelter_cats_array
             });
         });
     }
@@ -446,7 +451,7 @@ class CatsGame extends React.Component {
                         Play Card
                     </button>
 
-                    <button className="btn btn-danger" onClick={this.burnCard}>
+                    <button className="btn btn-danger u-4ml--l" onClick={this.burnCard}>
                         Burn Card for 1 Energy
                     </button>
 
@@ -466,7 +471,7 @@ class CatsGame extends React.Component {
     }
 
     render = () => {
-        const {cardRepository, selectedCardId, stats, currentPlayer, players, broadcastMessage, cardsInHand} = this.state;
+        const {cardRepository, selectedCardId, shelterCatsArray, stats, currentPlayer, players, broadcastMessage, cardsInHand} = this.state;
         return (
             <div className="cats-game-js">
 
@@ -502,16 +507,17 @@ class CatsGame extends React.Component {
 
                         <h2 className="u-4ml--l u-4mt--l"> Cats </h2>
 
-                        <div className="u-flex">
-                            {currentPlayer.owned_cats.length > 0 && currentPlayer.owned_cats.map((card) => <CatCard
-                                interact={function () {
-                                }} key={card.cat_card_id} card={cardRepository[card.cat_card_id]}/>)}
-                        </div>
+
+                        <ShelterMat player={{name: 'Shelter Kitties'}} cats={shelterCatsArray} cardRepository={cardRepository} />
+
+                        <CatPlayerMat player={currentPlayer} cats={currentPlayer.owned_cats} cardRepository={cardRepository} />
+
+                        {players.filter((player) => player.id !== currentPlayer.id).map((player) => <CatPlayerMat player={player} cats={player.owned_cats} cardRepository={cardRepository}  />)}
 
                     </div>
                     <div className="col-3">
                         <button className="btn btn-secondary" onClick={this.forceDraftRefresh}>
-                            CLICK THIS IF YOU THINK SOMEONE DID SOMETHING AND ITS NOT UPDATING
+                            HARD REFRESH IF STUCK
                         </button>
                         <button className="btn btn-primary" onClick={this.startGame}>
                             START GAME

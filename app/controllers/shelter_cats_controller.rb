@@ -16,8 +16,4 @@ class ShelterCatsController < ApplicationController
     CatGamesChannel.broadcast_to @cat_game.id, {message: {empty: rand()}, kind: 'refresh_draft_state'}
     head :ok
   end
-
-  def determine_payouts
-
-  end
 end

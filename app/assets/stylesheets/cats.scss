@@ -343,6 +343,7 @@ body {
   margin-right: 10px;
   min-height: 150px;
   //background-image: image-url("catscatscats.jpg")
+  max-height: 200px;
 }
 
 .cat-img-js {
@@ -422,4 +423,12 @@ body {
 
 .js-big-window {
   min-width: 600px;
+}
+
+.u-flex-up-down {
+  flex-direction: column;
+}
+
+.u-text-align-center {
+  text-align: center;
 }

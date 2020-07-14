@@ -31,7 +31,7 @@ class CatPlayer < ApplicationRecord
   has_many :owned_cats
 
   def as_json
-    (super).merge({owned_cards_count: owned_card_ids.count,
+    (super).merge({owned_cards_count: hand_card_ids.count,
                   owned_cats: owned_cats.map(&:as_json)})
   end
 
@@ -71,6 +71,6 @@ class CatPlayer < ApplicationRecord
   end
 
   def run_background_cards
-
+    update!(upkeeps_performed: upkeeps_performed + 1)
   end
 end
