@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const slash_splits = document.URL.split("/");
 
     let game_id = slash_splits[slash_splits.length-1];
-    fetch('/cats_games/' + slash_splits[game_id] + '/current_state').then(res => res.json())
+    fetch('/cats_games/' + game_id + '/current_state').then(res => res.json())
         .then(response => {
         ReactDOM.render(
             <ActionCableProvider url={API_WS_ROOT}>
