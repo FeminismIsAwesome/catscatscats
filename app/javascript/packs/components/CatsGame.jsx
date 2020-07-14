@@ -96,7 +96,7 @@ class CatsGame extends React.Component {
     };
 
     forceDraftRefresh = () => {
-        fetch('/cats_games/2/refresh_state').then(function (res) {
+        fetch('/cats_games' + this.props.game_id + '/refresh_state').then(function (res) {
             return res.json();
         }).then((data) => {
             this.setState({
@@ -119,7 +119,7 @@ class CatsGame extends React.Component {
     }
 
     startGame = () => {
-        fetch("/cats_games/2/start_game", {method: 'post'})
+        fetch("/cats_games" + this.props.game_id +"/start_game", {method: 'post'})
     }
 
     dismissAlert = () => {
@@ -129,11 +129,11 @@ class CatsGame extends React.Component {
     }
 
     simulateCatPhase = () => {
-        fetch("/cats_games/2/simulate_cat_round", {method: 'post'})
+        fetch("/cats_games" + this.props.game_id + "/simulate_cat_round", {method: 'post'})
     }
 
     simulateCardPlayingRound = () => {
-        fetch("/cats_games/2/simulate_card_playing_round", {method: 'post'})
+        fetch("/cats_games" + this.props.game_id + "/simulate_card_playing_round", {method: 'post'})
     }
 
     resetBid = () => {

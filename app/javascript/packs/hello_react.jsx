@@ -22,11 +22,12 @@ function uuidv4() {
 document.addEventListener('DOMContentLoaded', () => {
     const slash_splits = document.URL.split("/");
 
-    fetch('/cats_games/' + slash_splits[slash_splits.length-1] + '/current_state').then(res => res.json())
+    let game_id = slash_splits[slash_splits.length-1];
+    fetch('/cats_games/' + slash_splits[game_id] + '/current_state').then(res => res.json())
         .then(response => {
         ReactDOM.render(
             <ActionCableProvider url={API_WS_ROOT}>
-                <CatsGame gameData={response}/> </ActionCableProvider>,
+                <CatsGame gameData={response} game_id={game_id}/> </ActionCableProvider>,
             document.body.appendChild(document.createElement('div')),
         )
     });
