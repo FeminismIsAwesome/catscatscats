@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :cats, only: [:index] do
     collection do
       get :just_cards
+      get :just_cards_image
+      get :printable
     end
   end
 

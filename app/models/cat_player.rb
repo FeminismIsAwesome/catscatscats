@@ -35,6 +35,10 @@ class CatPlayer < ApplicationRecord
                   owned_cats: owned_cats.map(&:as_json)})
   end
 
+  def actions_provided
+    super || []
+  end
+
   def add_card_to_hand(card)
     self.hand_card_ids += [card.id]
   end

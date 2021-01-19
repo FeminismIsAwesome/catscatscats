@@ -111,15 +111,23 @@ class Cat
     end;nil
   end
 
-  def self.make_image(cats =get_cats.first(9), num=0)
+  def self.make_image(cats =get_cats.first(70), num=0)
     html = CatsController.render :just_cards, assigns: { cats: cats}
-    kit = IMGKit.new(html, width: 975, height: 1575)
+    kit = IMGKit.new(html, width: 325*10, height: 3050)
     css = StringIO.new( `curl http://localhost:3000/assets/cats.self-56d42432f42257ffb68aa6bf567a346540e2b96db2ccf467ad416ae450cd14c9.css` )
     kit.stylesheets << css
     css_2 = StringIO.new( `curl http://localhost:3000/assets/bootstrap.self-3529c8b3a4f85dfa856b4943cf9225a6dfa3af3b69e78b5b6f74461a6cfd72b0.css`)
     kit.stylesheets << css_2
+    # css_3 = StringIO.new(`curl https://use.fontawesome.com/releases/v5.11.2/css/all.css`)
+    # kit.stylesheets << css_3
     file = kit.to_file("tmp/cats#{num}.jpg")
 
+  end
+
+  def self.make_image_v2(card_type='cat')
+    kit = IMGKit.new("http://localhost:3000/cats/printable", width: 325*10, height: 3050)
+    puts "http://localhost:3000/cats/just_cards?type=#{card_type}&pad=true"
+    kit.to_file("cattest.jpg")
   end
 
   def self.make_images
