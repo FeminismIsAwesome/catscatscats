@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   def current_game
     @cat_game ||= CatPlayer.find(session[:player_id]).cat_game
   end

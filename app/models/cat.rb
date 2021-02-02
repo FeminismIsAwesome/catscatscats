@@ -5,7 +5,9 @@ class Cat
   def self.stats
     @cats = CSV.read(CATS_PATH,headers: true).group_by do |cat|
       cat["type"]
-    end
+    end.each do |cat, value|
+      puts "#{cat} has #{value.count}"
+    end;nil
   end
 
   def self.cat_distro
@@ -111,6 +113,24 @@ class Cat
     end;nil
   end
 
+  def self.ability_distro
+    CSV.read(CATS_PATH, headers: true).select do |cat|
+      cat["type"] == 'cat'
+    end.group_by do |cat|
+      cat["description"].present? && cat['description'].length > 5
+    end.each do |cat, value|
+      puts "#{cat} has #{value.count}"
+    end;nil
+  end
+
+  def self.subtype_distro
+    CSV.read(CATS_PATH, headers: true).group_by do |cat|
+      cat['type']
+    end.each do |cat, value|
+      puts "#{cat} has #{value.count}"
+    end;nil
+  end
+
   def self.make_image(cats =get_cats.first(70), num=0)
     html = CatsController.render :just_cards, assigns: { cats: cats}
     kit = IMGKit.new(html, width: 325*10, height: 3050)
@@ -124,10 +144,9 @@ class Cat
 
   end
 
-  def self.make_image_v2(card_type='cat')
+  def self.make_image_v2
     kit = IMGKit.new("http://localhost:3000/cats/printable", width: 325*10, height: 3050)
-    puts "http://localhost:3000/cats/just_cards?type=#{card_type}&pad=true"
-    kit.to_file("cattest.jpg")
+    kit.to_file("action2.jpg")
   end
 
   def self.make_images

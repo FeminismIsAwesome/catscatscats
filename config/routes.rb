@@ -8,8 +8,10 @@ Rails.application.routes.draw do
     end
   end
 
+  root to: "emails#new"
+
   resources :players
-  resources :emails, only: :create
+  resources :emails, only: [:create, :new]
   resources :cats_old, only: :index
   resources :cats_games do
     member do
@@ -32,11 +34,7 @@ Rails.application.routes.draw do
       post :pass
     end
   end
-  resources :conversations, only: :index do
-    collection do
-      get :fuck
-    end
-  end
+
 
   resources :shelter_cats do
     collection do

@@ -20,7 +20,7 @@ class CatsController < ApplicationController
   end
 
   def printable
-    redirect_to just_cards_cats_path(index: 0, cat_limit: 69, pad: true, type: 'cat')
+    redirect_to just_cards_cats_path(index: 69, cat_limit: 69, pad: true, type: 'cat')
   end
 
   def index

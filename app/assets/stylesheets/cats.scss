@@ -161,9 +161,17 @@ body {
   }
 }
 
-.cat-description {
-  font-size: 18px;
+.test {
 
+}
+
+.cat-description {
+  font-size: 16px;
+  line-height: 1;
+  .angry {
+    margin-top: -5px!important;
+    margin-bottom: -5px!important;
+  }
 }
 
 .cat-shift-title {
@@ -282,8 +290,8 @@ body {
 }
 
 .shorten {
-  margin-left: -5px;
-  margin-right: -5px;
+  //margin-left: -5px;
+  //margin-right: -5px;
 }
 
 .cat-mechanics {
@@ -399,7 +407,7 @@ body {
 }
 
 .cats-game-js {
-  line-height: 1;
+  line-height: 2;
 }
 
 .cat-card-js:hover {

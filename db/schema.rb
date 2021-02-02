@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_14_075556) do
+ActiveRecord::Schema.define(version: 2021_02_02_062951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,9 @@ ActiveRecord::Schema.define(version: 2020_07_14_075556) do
     t.boolean "ian_confirmed_legit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.boolean "playtester", default: false
+    t.text "notes"
   end
 
   create_table "owned_cats", force: :cascade do |t|
