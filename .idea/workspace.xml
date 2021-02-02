@@ -40,24 +40,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b77dfc45-72f4-4236-8102-a486caf1dcb1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/landing.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/cats/_card.html.haml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/emails/new.html.haml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/home/landing.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/cats.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/cats.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/cats_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/cats_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/emails_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/emails_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/cat.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/cat.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/email.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/email.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/cats/_cards.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cats/_cards.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/.~lock.cats.csv#" beforeDir="false" afterPath="$PROJECT_DIR$/config/.~lock.cats.csv#" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/cats.csv" beforeDir="false" afterPath="$PROJECT_DIR$/config/cats.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/cats.ods" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/landing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/landing.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/emails/new.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/emails/new.html.haml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -326,7 +312,7 @@
       <workItem from="1611115552064" duration="1667000" />
       <workItem from="1611205019244" duration="143000" />
       <workItem from="1611856362977" duration="935000" />
-      <workItem from="1612245983958" duration="3866000" />
+      <workItem from="1612245983958" duration="6313000" />
     </task>
     <servers />
   </component>
@@ -350,10 +336,10 @@
       <screen x="0" y="23" width="1792" height="1041" />
     </state>
     <state x="100" y="100" width="1592" height="920" key="DiffContextDialog/0.23.1792.1041@0.23.1792.1041" timestamp="1611015980005" />
-    <state width="568" height="445" key="SwitcherDM" timestamp="1612250175496">
+    <state width="568" height="445" key="SwitcherDM" timestamp="1612296462833">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="568" height="445" key="SwitcherDM/0.0.1792.1120@0.0.1792.1120" timestamp="1612250175496" />
+    <state width="568" height="445" key="SwitcherDM/0.0.1792.1120@0.0.1792.1120" timestamp="1612296462833" />
     <state x="697" y="264" key="VCS.ChangeListViewerDialog" timestamp="1611015661046">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>

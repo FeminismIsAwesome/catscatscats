@@ -7,6 +7,21 @@
   margin-right: 5px;
 }
 
+abbr {
+  display: none;
+}
+
+.main-img {
+  height: 600px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .main-img {
+    height: auto;
+    width: 95%;
+  }
+}
+
 .error {
   color: red;
   font-size: 12px;
@@ -16,11 +31,18 @@
   .cat-description {
     font-size: 18px!important;
   }
+  background-color: lightpink;
+}
+
+body {
+  background-color: black;
 }
 
 .form {
   border: 1px solid black;
   padding-top: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 

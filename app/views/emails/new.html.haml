@@ -1,40 +1,66 @@
-.container.pitch
-  - if params[:show_note].present?
+.container
+  .pitch
+    - if params[:show_note].present?
+      %p
+        image here is our box splash art. On one side, a cat is hissing at a spray bottle after clearly having scratched up the KITTY COMMITTEE box lettering. Maybe pissed on the C? On the right, a cat buzzed out of his mind, shreds of catnip leaving a mess. In the middle, a close up of a cat being smudgeoned by love and not hating it.
+    = image_tag(asset_path("Kitty Committee Demo.jpg"), class: "main-img")
+    = simple_form_for @email, html: {class: 'form'} do |f|
+      %p
+        Add your email to receive updates on when the Kickstarter Launch will happen, and promotions.
+      .row{style: "margin-bottom: 5px; display: flex; justify-content: center; align-items: center;"}
+        = f.input :email
+        = f.submit "Sign Up!", class: 'btn btn-primary'
+
     %p
-      image here is our box splash art. On one side, a cat is hissing at a spray bottle after clearly having scratched up the KITTY COMMITTEE box lettering. Maybe pissed on the C? On the right, a cat buzzed out of his mind, shreds of catnip leaving a mess. In the middle, a close up of a cat being smudgeoned by love and not hating it.
-  = image_tag(asset_path("Kitty Committee Demo.jpg"), class: "main-img")
-
-  %p
-    Kitty Committee is a chaotic strategy game for cat people, centered around resource management to accomplish two goals: pleasing your kitties, and getting more precious babies.
-  .row
-    .col-4
+      Kitty Committee is a chaotic strategy game for cat people, centered around resource management to accomplish two goals: pleasing your kitties, and getting more precious babies.
+    .row{style: "display: flex; margin-left: 10px; align-items: center; justify-content: center;"}
       = render partial: 'cats/card', locals: {cat: @cats[0]}
-    .col-4
       = render partial: 'cats/card', locals: {cat: @cats[1]}
-    .col-4
       = render partial: 'cats/card', locals: {cat: @cats[2]}
-  .row
-    %p.text-muted
-      NOT OFFICIAL IMAGES. PLACEHOLDERS. You can purruse the rest of the gallery
-      = link_to "here.", just_cards_cats_path
-  %p
-    After seeing the available kitties, you draft cards into your hand as fits your strategy and taste--would you strategically steal resources from your enemies, turning your neighbor's cats into living shits? How about holding on to the right resources to manage your Neopolitan Pair? Are you seeking to have just one, well-pampered cat? Or are you just seeking to be petty, out to get the person who screwed you last round?
-  %p
-    Pleasing your cat may be harder than you bargained for, but we love them all the same. Except Winnie. She really needs to work on her purr programming first.
+    .row
+      %p.text-muted{style: "padding-left: 20px;"}
+        NOT OFFICIAL IMAGES. PLACEHOLDERS. You can purruse the rest of the gallery
+        = link_to "here.", just_cards_cats_path
+    -#%p
+    -#  After seeing the available kitties, you pick cards into your hand as fits your strategy and taste. Would you strategically steal resources from your enemies, turning your neighbor's cats into living shits? How about holding on to the right resources to manage your Neopolitan Pair? Are you seeking to have just one, well-pampered cat? Or are you just seeking to be petty, out to get the person who screwed you last round?
+    %p
+      Pending Kitten Approval, Final Product Likely to Include:
+    .row{style: "text-align: left;"}
+      .col-3
+      .col-6
+        %ul{style: "border: 1px solid black; padding: 20px;"}
+          %li
+            Drafting (instead of drawing cards, picking your cards round robin)
+          %li
+            Auctions (want Schmoo the Maine Coon? Gotta pay for it)
+          %li
+            Trying to gain the most Joy (victory points) by satisfying your cat's Needs and Greeds
+          %li
+            Strategically stealing resources from your opponent
+          %li
+            Hoarding food so you can feed your five precious ones
+          %li
+            Choosing to pamper one cat very well
+          %li
+            Collecting cats that synergize well together, like the cats Vanilla, Strawberry, and Chocolate
+          %li
+            And more!
+    %p
+      Pleasing your cat may be harder than you bargained for, but we love them all the same. Except Winnie. She really needs to work on her purr programming first.
 
-  .row
-    .col-4
-    .col-4
-      = render partial: 'cats/card', locals: {cat: @winnie}
-  .sign-up
     .row
-      .col-12
-        Interested in hearing more and receiving updates on progress? Sign up for our email list!
-    .row
-      .col-12
-        = simple_form_for @email, html: {class: 'form'} do |f|
-          = f.input :email
-          = f.input :name
-          = f.input :playtester, label: "Would you like to sign up for playtests?"
-          = f.input :notes, label: "Any questions for the creator?"
-          = f.submit "Sign Up To Get Notified When Kitty Committee is Launching!", class: 'btn btn-primary'
+      .col-4
+      .col-4
+        = render partial: 'cats/card', locals: {cat: @winnie}
+    .sign-up
+      .row
+        .col-12
+          Interested in hearing more and receiving updates on progress? Sign up for our email list!
+      .row
+        .col-12
+          = simple_form_for @email, html: {class: 'form'} do |f|
+            = f.input :email
+            = f.input :name
+            = f.input :playtester, label: "Would you like to sign up for playtests?"
+            = f.input :notes, label: "Any questions for the creator?"
+            = f.submit "Sign Up To Get Notified When Kitty Committee is Launching!", class: 'btn btn-primary'
