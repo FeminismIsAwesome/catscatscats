@@ -33,7 +33,8 @@
         %td.tcol-3
           - if cat["Number-tl"].present?
             = (cat["Number-tl"])
-            = image_tag(asset_path("energy.jpg"), class: 'tolerance angry shorten')
+            %i.fa.fa-lightbulb
+            -# = image_tag(asset_path("energy.jpg"), class: 'tolerance angry shorten')
         %td.tcol-7
           %h5.cat-title
             = cat["title"]
@@ -69,6 +70,10 @@
     .cat-stats.row
       .col-12
         ATTACH TO CAT FOR BONUS
+  - if cat['subtype'].in?(%w(attack cat-achment resource overloving defense collaborative))
+    .cat-stats.row
+      .col-12
+        = cat['subtype'].upcase
   - if cat['subtype'] == 'item'
     .cat-stats.row
       .col-12

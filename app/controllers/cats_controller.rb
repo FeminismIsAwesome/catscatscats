@@ -20,7 +20,16 @@ class CatsController < ApplicationController
   end
 
   def printable
-    redirect_to just_cards_cats_path(index: 69, cat_limit: 69, pad: true, type: 'cat')
+    redirect = params[:print]
+    if redirect == "cat"
+      redirect_to just_cards_cats_path(index: 0, cat_limit: 69, pad: true, type: 'cat')
+    elsif redirect == "action1"
+      redirect_to just_cards_cats_path(index: 0, cat_limit: 69, pad: true, type: 'action')
+    elsif redirect == "action2"
+      redirect_to just_cards_cats_path(index: 69, cat_limit: 69, pad: true, type: 'action')
+    else
+      redirect_to just_cards_cats_path(index: 0, cat_limit: 69, pad: true, type: 'cat')
+    end
   end
 
   def index

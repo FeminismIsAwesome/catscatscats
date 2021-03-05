@@ -1,9 +1,6 @@
 .container
   .pitch
-    - if params[:show_note].present?
-      %p
-        image here is our box splash art. On one side, a cat is hissing at a spray bottle after clearly having scratched up the KITTY COMMITTEE box lettering. Maybe pissed on the C? On the right, a cat buzzed out of his mind, shreds of catnip leaving a mess. In the middle, a close up of a cat being smudgeoned by love and not hating it.
-    = image_tag(asset_path("Kitty Committee Demo.jpg"), class: "main-img")
+    = image_tag(asset_path("faketitle.JPG"), class: "main-img")
     = simple_form_for @email, html: {class: 'form'} do |f|
       %p
         Add your email to receive updates on when the Kickstarter Launch will happen, and promotions.
@@ -17,10 +14,12 @@
       = render partial: 'cats/card', locals: {cat: @cats[0]}
       = render partial: 'cats/card', locals: {cat: @cats[1]}
       = render partial: 'cats/card', locals: {cat: @cats[2]}
+      = render partial: 'cats/card', locals: {cat: @cats[3]}
     .row
       %p.text-muted{style: "padding-left: 20px;"}
-        NOT OFFICIAL IMAGES. PLACEHOLDERS. You can purruse the rest of the gallery
-        = link_to "here.", just_cards_cats_path
+        Ones in gallery above have art from our creator. You can purruse the rest of the gallery
+        = link_to "here", just_cards_cats_path
+        , but those have placeholder art
     -#%p
     -#  After seeing the available kitties, you pick cards into your hand as fits your strategy and taste. Would you strategically steal resources from your enemies, turning your neighbor's cats into living shits? How about holding on to the right resources to manage your Neopolitan Pair? Are you seeking to have just one, well-pampered cat? Or are you just seeking to be petty, out to get the person who screwed you last round?
     %p
@@ -30,7 +29,7 @@
       .col-6
         %ul{style: "border: 1px solid black; padding: 20px;"}
           %li
-            Drafting (instead of drawing cards, picking your cards from a rotating set)
+            Drafting
           %li
             Auctions (want Schmoo the Maine Coon? Gotta pay for it)
           %li

@@ -123,6 +123,26 @@ class Cat
     end;nil
   end
 
+  def self.action_distro
+    CSV.read(CATS_PATH, headers: true).select do |cat|
+      cat["type"] == 'action'
+    end.group_by do |cat|
+      cat['subtype']
+    end.each do |cat, value|
+      puts "#{cat} has #{value.count}"
+    end;nil
+  end
+
+  def self.action_cost_distro
+    CSV.read(CATS_PATH, headers: true).select do |cat|
+      cat["type"] == 'action'
+    end.group_by do |cat|
+      cat['Number-tl']
+    end.each do |cat, value|
+      puts "#{cat} has #{value.count}"
+    end;nil
+  end
+
   def self.subtype_distro
     CSV.read(CATS_PATH, headers: true).group_by do |cat|
       cat['type']
@@ -145,7 +165,11 @@ class Cat
   end
 
   def self.make_image_v2
-    kit = IMGKit.new("http://localhost:3000/cats/printable", width: 325*10, height: 3050)
+    kit = IMGKit.new("http://localhost:3000/cats/printable?print=cat", width: 325*10, height: 3050)
+    kit.to_file("cats.jpg")
+    kit = IMGKit.new("http://localhost:3000/cats/printable?print=action1", width: 325*10, height: 3050)
+    kit.to_file("action1.jpg")
+    kit = IMGKit.new("http://localhost:3000/cats/printable?print=action2", width: 325*10, height: 3050)
     kit.to_file("action2.jpg")
   end
 

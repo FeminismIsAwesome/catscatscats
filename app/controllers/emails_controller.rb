@@ -11,8 +11,11 @@ class EmailsController < ApplicationController
   def new
     @email = Email.new
     cats = Cat.get_cats
-    @cats = cats.select do |cat|
-      cat['title'] == "Selena" || cat['title'] == "Serious Cat-titude" || cat['title'] == "Unappreciated Costume"
+    @cats = [cats.find do |cat|
+      cat['title'] == 'NO!'
+    end]
+    @cats += cats.select do |cat|
+      cat['title'] == "Selena" || cat['title'] == "Serious Cat-titude" || cat['title'] == "Push off the table"
     end
     @winnie = cats.find do |cat|
       cat['title'].include?("Winnie")
