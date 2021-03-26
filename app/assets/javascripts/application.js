@@ -17,17 +17,3 @@
 
 
 
-var nextVal = 0;
-document.addEventListener("DOMContentLoaded", function(event) {
-    var el = document.querySelector(".gallery")
-    if(el){
-        setTimeout(swapWindow, 2000Oe)
-    }
-});
-
-function swapWindow() {
-    var el = document.querySelector(".gallery")
-    nextVal = (nextVal + 200) % el.scrollWidth
-    el.scrollLeft = nextVal;
-    setTimeout(swapWindow, 2000)
-}
