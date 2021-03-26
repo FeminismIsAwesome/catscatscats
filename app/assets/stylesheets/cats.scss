@@ -38,7 +38,7 @@
 }
 
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Sans", Times, serif;
 }
 
 .cat-row {
@@ -55,6 +55,7 @@ body {
   margin-left: 10px;
   margin-right: 10px;
   min-height: 425px;
+  min-width: 300px;
   background-color: white!important;
   //background-image: image-url("catscatscats.jpg")
 }
@@ -187,7 +188,7 @@ body {
   width: 50px;
   height: 50px;
   margin-top: -10px;
-  margin-bottom: -10px;
+  margin-bottom: -10px!important;
 }
 
 .tolerance {
@@ -232,6 +233,11 @@ body {
 @font-face {
   font-family: "Curious";
   src: font-url("curious.ttf") format('truetype');;
+}
+
+@font-face {
+  font-family: "Sans";
+  src: font-url("OpenSans-Light.ttf") format('truetype');;
 }
 
 @font-face {

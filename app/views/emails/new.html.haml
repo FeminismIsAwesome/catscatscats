@@ -10,14 +10,17 @@
 
     %p
       Kitty Committee is a chaotic strategy game for cat people, centered around resource management to accomplish two goals: pleasing your kitties, and getting more precious babies.
-    .row{style: "display: flex; margin-left: 10px; align-items: center; justify-content: center;"}
+    .gallery{style: "display: flex; overflow-x: scroll; align-items: center;"}
       = render partial: 'cats/card', locals: {cat: @cats[0]}
       = render partial: 'cats/card', locals: {cat: @cats[1]}
       = render partial: 'cats/card', locals: {cat: @cats[2]}
       = render partial: 'cats/card', locals: {cat: @cats[3]}
+      = render partial: 'cats/card', locals: {cat: @cats[4]}
+      = render partial: 'cats/card', locals: {cat: @cats[5]}
+    -#.row{style: "display: flex; margin-left: 10px; align-items: center; justify-content: center;"}
     .row
       %p.text-muted{style: "padding-left: 20px;"}
-        Ones in gallery above have art from our creator. You can purruse the rest of the gallery
+        Cartoon art is from our creator. You can purruse the rest of the gallery
         = link_to "here", just_cards_cats_path
         , but those have placeholder art
     -#%p
@@ -31,19 +34,17 @@
           %li
             Drafting
           %li
-            Auctions (want Schmoo the Maine Coon? Gotta pay for it)
+            Auctions to buy more precious kitties
           %li
-            Trying to gain the most Joy (victory points) by satisfying your cat's Needs and Greeds
+            Trying to gain the most Joy by pleasing your cat
           %li
-            Strategically stealing resources from your opponent
+            Harassing your opponents
           %li
-            Hoarding food so you can feed your five precious ones
+            Choosing between hoarding cats or pleasing a few cats well
           %li
-            Choosing to pamper one cat very well
+            Abandoning winning to just be petty
           %li
-            Abandoning winning to just play petty cards, as some cats do
-          %li
-            Collecting cats that synergize well together, like the cats Vanilla, Strawberry, and Chocolate
+            Collecting cats that are matches, like the cats Vanilla, Strawberry, and Chocolate
           %li
             And more!
     %p
@@ -59,9 +60,7 @@
           Interested in hearing more and receiving updates on progress? Sign up for our email list!
       .row
         .col-12
-          = simple_form_for @email, html: {class: 'form'} do |f|
+          = simple_form_for @email, html: {class: 'form', style: "padding-bottom: 10px;"} do |f|
             = f.input :email
             = f.input :name
-            = f.input :playtester, label: "Would you like to sign up for playtests?"
-            = f.input :notes, label: "Any questions for the creator?"
             = f.submit "Sign Up To Get Notified When Kitty Committee is Launching!", class: 'btn btn-primary'

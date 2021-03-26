@@ -15,7 +15,7 @@ class EmailsController < ApplicationController
       cat['title'] == 'NO!'
     end]
     @cats += cats.select do |cat|
-      cat['title'] == "Selena" || cat['title'] == "Serious Cat-titude" || cat['title'] == "Push off the table"
+      cat['title'].in? ["Selena", "Serious Cat-titude", "Push off the table", "Lucy", "Selectively Nice"]
     end
     @winnie = cats.find do |cat|
       cat['title'].include?("Winnie")

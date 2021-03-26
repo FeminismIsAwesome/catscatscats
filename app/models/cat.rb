@@ -143,6 +143,46 @@ class Cat
     end;nil
   end
 
+  def self.action_type_distro
+    CSV.read(CATS_PATH, headers: true).select do |cat|
+      cat["type"] == 'action'
+    end.group_by do |cat|
+      desc = cat['description'].downcase
+      Cat.classify(desc).join(",")
+    end.each do |cat, value|
+      puts "#{cat} has #{value.count}"
+    end;nil
+  end
+
+  def self.classify(desc)
+    types = []
+    if desc.match?(/add \d food/) || desc.match?(/steal \d food/)
+      types << "add food"
+    end
+    if desc.match?(/add \d catnip/) || desc.match?(/steal \d catnip/)
+      types << "add catnip"
+    end
+    if desc.match?(/add \d toy/) || desc.match?(/steal \d toy/)
+      types << "add toy"
+    end
+    if desc.match?(/add \d litterbox/) || desc.match?(/steal \d litterbox/)
+      types << "add litterbox"
+    end
+    if desc.match?(/remove \d food/) || desc.match?(/loses \d food/)
+      types << "remove food"
+    end
+    if desc.match?(/remove \d toy/) || desc.match?(/loses \d toy/)
+      types << "remove toy"
+    end
+    if desc.match?(/remove \d litterbox/) || desc.match?(/loses \d litterbox/)
+      types << "remove litterbox"
+    end
+    if desc.match?(/remove \d catnip/) || desc.match?(/loses \d catnip/)
+      types << "remove catnip"
+    end
+    types
+  end
+
   def self.subtype_distro
     CSV.read(CATS_PATH, headers: true).group_by do |cat|
       cat['type']
