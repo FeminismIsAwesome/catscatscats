@@ -11,12 +11,8 @@
     %p
       Kitty Committee is a chaotic strategy game for cat people, centered around resource management to accomplish two goals: pleasing your kitties, and getting more precious babies.
     .gallery{style: "display: flex; overflow-x: scroll; align-items: center;"}
-      = render partial: 'cats/card', locals: {cat: @cats[0]}
-      = render partial: 'cats/card', locals: {cat: @cats[1]}
-      = render partial: 'cats/card', locals: {cat: @cats[2]}
-      = render partial: 'cats/card', locals: {cat: @cats[3]}
-      = render partial: 'cats/card', locals: {cat: @cats[4]}
-      = render partial: 'cats/card', locals: {cat: @cats[5]}
+      - @cats.each do |cat|
+        = render partial: 'cats/card', locals: {cat: cat}
     -#.row{style: "display: flex; margin-left: 10px; align-items: center; justify-content: center;"}
     .row
       %p.text-muted{style: "padding-left: 20px;"}

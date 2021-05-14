@@ -1,0 +1,3 @@
+name,event_type,event_name,event_time,kickstarter_profile_guid,indiegogo_profile_guid,kickstarter_profile_url,indiegogo_profile_url,email,estimated_launch_date,project_category,email_list_size,website,utm_source,utm_medium,utm_campaign,source_permalink,prior_campaign_count
+Test McK,Webinar,My first test event,"Jun 2, 2020 10:30 AM",,,,,obviousfake@example.com,2020-12-08T08:00:00.000Z,"Design, Tech, Hardware",20,,BK_CFN,BK_CFN_email,BackerKit_CFN,https://www.crowdcast.io/e/backerkit-launchboom-product-validation,
+Test McK,Project Signup,My second test event,"Jun 2, 2020 11:10 AM",,,,,obviousfake@example.com,2020-12-08T08:00:00.000Z,"Design, Tech, Hardware",20,,BK_CFN,BK_CFN_email,BackerKit_CFN,https://www.crowdcast.io/e/backerkit-launchboom-product-validation,6-9

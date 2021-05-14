@@ -16,6 +16,28 @@ module ApplicationHelper
     # line.gsub(/[iI]nfluence/, image_tag(asset_path("money")), class: 'tolerance angry shorten')
   end
 
+  def get_costs(letters)
+    return nil if letters.nil?
+    if letters == "0"
+      return nil
+    end
+    letters.chars.map do |letter|
+      if letter == 'F'
+        image_tag(asset_path('money.png'), class: 'tolerance angry shorten')
+      elsif letter == 'T'
+        image_tag(asset_path('cattoy.png'), class: 'tolerance angry shorten')
+      elsif letter == 'C'
+        image_tag(asset_path('catnip.png'), class: 'tolerance angry shorten')
+      elsif letter == 'L'
+        image_tag(asset_path('litterbox.png'), class: 'tolerance angry shorten')
+      elsif letter == 'E'
+        "<i class='fa fa-lightbulb'/>"
+      elsif letter == 'M'
+        'CARD'
+      end
+    end.compact.join("<span> </span>")
+  end
+
   def get_needs(letters)
     letters.chars.map do |letter|
       if letter == 'F'
@@ -104,6 +126,12 @@ module ApplicationHelper
     (1..num).map do |_|
       image_tag(asset_path("coolcat.png"), class: cat_class)
     end.join("\n")
+  end
+
+  def render_nap_icon(cat_description)
+    if cat_description.downcase.include?('nap')
+      "💤"
+    end
   end
 
   def render_subtype(subtype, show_text)

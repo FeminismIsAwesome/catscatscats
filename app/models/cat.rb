@@ -42,7 +42,7 @@ class Cat
     CSV.read(CATS_PATH, headers: true).select do |cat|
       cat["type"] == 'cat'
     end.group_by do |cat|
-      cat["subtype"]
+      cat["subtype"].split(' ').first
     end.each do |cat, value|
       puts "#{cat} has #{value.count}"
     end;nil
@@ -154,6 +154,15 @@ class Cat
     end;nil
   end
 
+  def self.non_resource_cards
+    CSV.read(CATS_PATH, headers: true).select do |cat|
+      cat["type"] == 'action'
+    end.select do |cat|
+      desc = cat['description'].downcase
+      !Cat.classify(desc).present?
+    end
+  end
+
   def self.classify(desc)
     types = []
     if desc.match?(/add \d food/) || desc.match?(/steal \d food/)
@@ -205,7 +214,7 @@ class Cat
   end
 
   def self.make_image_v2
-    kit = IMGKit.new("http://localhost:3000/cats/printable?print=cat", width: 325*10, height: 3050)
+    kit = IMGKit.new("http://localhost:3000/cats/printable?print=cat", width: 325*10, height: 3200)
     kit.to_file("cats.jpg")
     kit = IMGKit.new("http://localhost:3000/cats/printable?print=action1", width: 325*10, height: 3050)
     kit.to_file("action1.jpg")

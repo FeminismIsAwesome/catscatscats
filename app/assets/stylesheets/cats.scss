@@ -10,7 +10,7 @@
 }
 
 .trophies {
-  font-size: 28px;
+  font-size: 24px;
 }
 
 .cat-action-cost {
@@ -32,6 +32,14 @@
 .cat-img-massive {
   height: 300px;
   width: 300px;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.cat-img-8paneled {
+  height: 200px;
+  width: 200px;
   border-right: 1px solid black;
   border-left: 1px solid black;
   border-top: 1px solid black;

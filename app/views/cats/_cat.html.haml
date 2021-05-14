@@ -1,0 +1,29 @@
+%table.table.full
+  %tbody.table.full
+    %tr
+      %td{style: "width: 20%"}
+        %div
+          %div{style: "height: 200px;"}
+            = image_tag('need', style: "width: 30px;")
+            !=  get_needs(cat["Number-tl"])
+          %div{style: "height: 100px;"}
+            != render_subtype(cat['subtype'].split(' ').first, false)
+            != render_nap_icon(cat['description'])
+          %div{style: "height: 100px;"}
+            = image_tag('greed', style: "width: 30px;")
+            !=  get_needs(cat["Number-tr"])
+      %td{style: "width: 80%"}
+        %h5.cat-title.cat-left-align.cat-title-big
+          = cat['title']
+        %img.cat-img-8paneled{src: get_tile_image(cat)}
+        .cat-stats.row
+          .col-12.trophies{class: "color-#{cat['subtype']}"}
+            != render_subtype(cat['subtype'], true)
+        .cat-mechanics
+          %h4.cat-description{style: "margin-top: 5px; font-size: 14px;"}
+            - (cat["description"] || "").split("\n").each do |line|
+              %div
+                != render_cat_line(line, big_cat: true)
+          %h7.cat-flavor
+            = cat["flavor"]
+
