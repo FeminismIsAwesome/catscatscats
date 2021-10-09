@@ -48,7 +48,7 @@ class Cat
     end;nil
   end
 
-  def self.get_cats
+  def self.get_cats(order_type='weird')
     cats_path = Rails.root.join('config', 'cats.csv')
     cat_ordering = {
         "award" => 0,
@@ -62,11 +62,15 @@ class Cat
     }
     CSV.read(cats_path,headers: true).sort_by do
     | cat |
-      cat_order = cat_ordering[cat["type"]]
-      if cat_order.present?
-        cat_order
+      if order_type == 'weird'
+        cat_order = cat_ordering[cat["type"]]
+        if cat_order.present?
+          cat_order
+        else
+          cat['description'].present? ? cat['description'].length : 1000
+        end
       else
-        cat['description'].present? ? cat['description'].length : 1000
+        cat['row_num'].to_i
       end
     end
   end
@@ -214,12 +218,13 @@ class Cat
   end
 
   def self.make_image_v2
-    kit = IMGKit.new("http://localhost:3000/cats/printable?print=cat", width: 325*10, height: 3200)
+    kit = IMGKit.new("http://localhost:3000/cats/printable?print=cat", width: 325*10, height: 310*7)
     kit.to_file("cats.jpg")
     kit = IMGKit.new("http://localhost:3000/cats/printable?print=action1", width: 325*10, height: 3050)
     kit.to_file("action1.jpg")
     kit = IMGKit.new("http://localhost:3000/cats/printable?print=action2", width: 325*10, height: 3050)
     kit.to_file("action2.jpg")
+    Cat.type_distro
   end
 
   def self.make_images

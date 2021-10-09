@@ -6,7 +6,7 @@ class CatsController < ApplicationController
     cat_index = params[:index].present? ? params[:index].to_i : 0
     cat_limit = params[:limit].present? ? params[:limit].to_i : 10000
     cat_type_filter = params[:type]
-    @cats = Cat.get_cats[cat_index..(cat_limit+cat_index)]
+    @cats = Cat.get_cats('normal')[cat_index..(cat_limit+cat_index)]
     if cat_type_filter.present?
       @cats = @cats.select do |cat|
         cat['type'] == cat_type_filter

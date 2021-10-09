@@ -1,18 +1,39 @@
 module ApplicationHelper
 
+  def derive_background_image(cat)
+    if cat['type'] == 'cat'
+      # brat
+      # curious
+      # cuddly
+      # furocious
+      image = if cat['subtype'] == 'brat'
+                "curious-bg-1.PNG"
+              elsif cat['subtype'] == 'curious'
+                "curious-bg-2.PNG"
+              elsif cat['subtype'] == 'cuddly'
+                "cuddly-bg.PNG"
+              elsif cat['subtype'] == 'furocious'
+                "furocious-back.PNG"
+              end
+      "background-image:url(\"#{image_url(image)}\"); background-size: cover;"
+    else
+      ""
+    end
+  end
+
   def render_cat_line(line, big_cat: false)
     line = line.gsub(':butthole:', image_tag(asset_path("tolerance.jpeg"), class: 'tolerance'))
     line = line.gsub(/[pP]issed/, image_tag(asset_path("pissedreplace.png"), class: 'tolerance angry'))
     if big_cat
-      line = line.gsub('VP', image_tag(asset_path("coolcat.png"), class: 'big-icon angry shorten'))
+      line = line.gsub('VP', image_tag(asset_path("vp.PNG"), class: 'big-icon angry shorten'))
     else
-      line = line.gsub('VP', image_tag(asset_path("coolcat.png"), class: 'tolerance angry shorten'))
+      line = line.gsub('VP', image_tag(asset_path("vp.PNG"), class: 'tolerance angry shorten'))
     end
     line = line.gsub(':trophy:', "<i class='fa fa-trophy'></i>")
-    line = line.gsub('litterbox', image_tag(asset_path('litterbox.png'), class: 'tolerance angry shorten'))
-    line = line.gsub('catnip', image_tag(asset_path('catnip.png'), class: 'tolerance angry shorten'))
-    line = line.gsub('toy', image_tag(asset_path('cattoy.png'), class: 'tolerance angry shorten'))
-    line = line.gsub('food', image_tag(asset_path('money.png'), class: 'tolerance angry shorten'))
+    line = line.gsub('litterbox', image_tag(asset_path('litterbox.PNG'), class: 'tolerance angry shorten'))
+    line = line.gsub('catnip', image_tag(asset_path('catnip.PNG'), class: 'tolerance angry shorten'))
+    line = line.gsub('toy', image_tag(asset_path('toy.PNG'), class: 'tolerance angry shorten'))
+    line = line.gsub('food', image_tag(asset_path('food.PNG'), class: 'tolerance angry shorten'))
     # line.gsub(/[iI]nfluence/, image_tag(asset_path("money")), class: 'tolerance angry shorten')
   end
 
@@ -23,13 +44,13 @@ module ApplicationHelper
     end
     letters.chars.map do |letter|
       if letter == 'F'
-        image_tag(asset_path('money.png'), class: 'tolerance angry shorten')
+        image_tag(asset_path('food.PNG'), class: 'tolerance angry shorten')
       elsif letter == 'T'
-        image_tag(asset_path('cattoy.png'), class: 'tolerance angry shorten')
+        image_tag(asset_path('toy.PNG'), class: 'tolerance angry shorten')
       elsif letter == 'C'
-        image_tag(asset_path('catnip.png'), class: 'tolerance angry shorten')
+        image_tag(asset_path('catnip.PNG'), class: 'tolerance angry shorten')
       elsif letter == 'L'
-        image_tag(asset_path('litterbox.png'), class: 'tolerance angry shorten')
+        image_tag(asset_path('litterbox.PNG'), class: 'tolerance angry shorten')
       elsif letter == 'E'
         "<i class='fa fa-lightbulb'/>"
       elsif letter == 'M'
@@ -38,18 +59,23 @@ module ApplicationHelper
     end.compact.join("<span> </span>")
   end
 
-  def get_needs(letters)
-    letters.chars.map do |letter|
+  def get_needs(letters, no_span=false)
+    letter_data = letters.chars.map do |letter|
       if letter == 'F'
-        image_tag(asset_path('money.png'), class: 'tolerance angry shorten')
+        image_tag(asset_path('food.PNG'), class: 'tolerance angry shorten')
       elsif letter == 'T'
-        image_tag(asset_path('cattoy.png'), class: 'tolerance angry shorten')
+        image_tag(asset_path('toy.PNG'), class: 'tolerance angry shorten')
       elsif letter == 'C'
-        image_tag(asset_path('catnip.png'), class: 'tolerance angry shorten')
+        image_tag(asset_path('catnip.PNG'), class: 'tolerance angry shorten')
       elsif letter == 'L'
-        image_tag(asset_path('litterbox.png'), class: 'tolerance angry shorten')
+        image_tag(asset_path('litterbox.PNG'), class: 'tolerance angry shorten')
       end
-    end.compact.join("<span style='margin-left: 5px;'> </span>")
+    end.compact
+    if no_span
+      letter_data.join("")
+    else
+      letter_data.join("<span style='margin-left: 5px;'> </span>")
+    end
   end
 
   def get_happiness(line)
@@ -129,6 +155,7 @@ module ApplicationHelper
   end
 
   def render_nap_icon(cat_description)
+    return "" if cat_description.nil?
     if cat_description.downcase.include?('nap')
       "💤"
     end
@@ -137,15 +164,15 @@ module ApplicationHelper
   def render_subtype(subtype, show_text)
     text = show_text ? subtype : ''
     if subtype == 'brat'
-      return "<text class='bratty color-brat'><i class='fas fa-heart-broken'></i>️ #{text} </text>"
+      return "<text class='bratty color-brat'>#{image_tag(asset_path("brat.PNG"), class: 'tolerance angry shorten')} #{text} </text>"
     elsif subtype == 'curious'
-      return "<text class='curious color-curious'><i class='fas fa-eye'></i>️ #{text} </text>"
+      return "<text class='curious color-curious'>#{image_tag(asset_path("curious.PNG"), class: 'tolerance angry shorten')}️ #{text} </text>"
     elsif subtype == 'cuddly'
-      return "<text class='cuddly color-cuddly'><i class='fas fa-heart'></i>️ #{text} </text>"
+      return "<text class='cuddly color-cuddly'>#{image_tag(asset_path("cuddly.PNG"), class: 'tolerance angry shorten')}️ #{text} </text>"
     elsif subtype == 'furocious'
-      return "<text class='furocious color-furocious'><i class='fas fa-fist-raised'></i>️ #{text} </text>"
-    elsif subtype == 'conspirator'
-      return "<text class='conspirator color-conspirator'><i class='fas fa-cat'></i>️ #{text} </text>"
+      return "<text class='furocious color-furocious'>#{image_tag(asset_path("furocious.PNG"), class: 'tolerance angry shorten')}️ #{text} </text>"
+    # elsif subtype == 'conspirator'
+    #   return "<text class='conspirator color-conspirator'><i class='fas fa-cat'></i>️ #{text} </text>"
     end
     subtype
   end

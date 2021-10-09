@@ -1,4 +1,4 @@
-.cat-card
+.cat-card{style: derive_background_image(cat)}
   - if cat['type'] == 'cat'
     = render partial: 'cats/cat', locals: {cat: cat}
   - else
@@ -15,7 +15,7 @@
           %td.tcol-4
             != get_needs(cat['Number-tl'])
           %td.tcol-6
-            %h5.cat-title.cat-left-align.cat-title-big
+            %h5.cat-title.cat-left-align.cat-title-big{style: "text-align: right;"}
               = cat["title"]
         - elsif cat['type'] == 'upgrade'
           %td.tcol-3
@@ -33,10 +33,9 @@
         - else
           %td.tcol-3
             != get_costs(cat["Number-tl"])
-          %td.tcol-7
-            %h5.cat-title
+          %td.tcol-10
+            %h5.cat-title{style: "text-align: right;"}
               = cat["title"]
-          %td.tcol-2
     - if cat['type'] != 'Money'
       %img.cat-img{src: get_tile_image(cat)}
     - else
@@ -68,6 +67,10 @@
       .cat-stats.row
         .col-12
           ATTACH TO CAT FOR BONUS
+    - if cat['subtype'] == "room upgrade"
+      .cat-stats.row
+        .col-12
+          Room Upgrade
     - if cat['subtype'].in?(%w(attack cat-achment resource overloving defense collaborative))
       .cat-stats.row
         .col-12

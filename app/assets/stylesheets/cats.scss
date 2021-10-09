@@ -72,6 +72,21 @@ body {
   background: rgba(255, 255, 255, 0);
 }
 
+.cat-title-v2 {
+  background: rgba(255, 255, 255, 0);
+  margin-top: 10px;
+  margin-left: 5px!important;
+}
+
+.cat-shadow {
+  background: white;
+  border-top-right-radius:7px;
+  border-top-left-radius:7px;
+  border-bottom-right-radius:7px;
+  border-bottom-left-radius:7px;
+  box-shadow: -4px 4px    10px rgba(0,0,0,0.6);
+}
+
 .cat-title-big {
   font-size: 20px;
 }
@@ -199,6 +214,16 @@ body {
   margin-bottom: -10px!important;
 }
 
+.score-counter-img {
+  width: 50px;
+  height: 50px;
+}
+
+.cat-score {
+  font-weight: bold;
+  font-size: 16px;
+}
+
 .tolerance {
    width: 25px;
    height: 25px;
@@ -312,13 +337,11 @@ body {
 }
 
 .cat-mechanics {
-  border-top: 1px solid black;
   padding-left: 10px;
   padding-right: 10px;
 }
 
 .cat-stats {
-  border-top: 1px solid black;
   margin-left: 0px!important;
   margin-right: 0px!important;
   .col-6 {
@@ -456,4 +479,16 @@ body {
 
 .u-text-align-center {
   text-align: center;
+}
+
+.example {
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+  0%   { margin-left: -5000px; transform: rotate(0deg);}
+  25%  {margin-left: -500px;}
+  50%  { margin-left: -50px;}
+  100% {margin-left: -10px; transform: rotate(360deg);}
 }
