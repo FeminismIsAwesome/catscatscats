@@ -30,7 +30,7 @@ module ApplicationHelper
       line = line.gsub('VP', image_tag(asset_path("vp.PNG"), class: 'tolerance angry shorten'))
     end
     line = line.gsub(':trophy:', "<i class='fa fa-trophy'></i>")
-    # line = line.gsub('litterbox', image_tag(asset_path('litterbox.png'), class: 'tolerance angry shorten'))
+    line = line.gsub('litterbox', image_tag(asset_path('litterbox.png'), class: 'tolerance angry shorten'))
     line = line.gsub('catnip', image_tag(asset_path('catnip.png'), class: 'tolerance angry shorten'))
     line = line.gsub('toy', image_tag(asset_path('toy.PNG'), class: 'tolerance angry shorten'))
     line.gsub('food', image_tag(asset_path('food.PNG'), class: 'tolerance angry shorten'))
@@ -68,7 +68,7 @@ module ApplicationHelper
       elsif letter == 'C'
         image_tag(asset_path('catnip.png'), class: 'tolerance angry shorten')
       elsif letter == 'L'
-        image_tag(asset_path('litterbox.PNG'), class: 'tolerance angry shorten')
+        image_tag(asset_path('litterbox.png'), class: 'tolerance angry shorten')
       end
     end.compact
     if no_span
