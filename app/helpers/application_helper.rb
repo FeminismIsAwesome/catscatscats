@@ -30,7 +30,7 @@ module ApplicationHelper
       line = line.gsub('VP', image_tag(asset_path("vp.PNG"), class: 'tolerance angry shorten'))
     end
     line = line.gsub(':trophy:', "<i class='fa fa-trophy'></i>")
-    line = line.gsub('litterbox', image_tag(asset_path('litterbox.PNG'), class: 'tolerance angry shorten'))
+    line = line.gsub('litterbox', '')
     line = line.gsub('catnip', image_tag(asset_path('catnip.PNG'), class: 'tolerance angry shorten'))
     line = line.gsub('toy', image_tag(asset_path('toy.PNG'), class: 'tolerance angry shorten'))
     line.gsub('food', image_tag(asset_path('food.PNG'), class: 'tolerance angry shorten'))

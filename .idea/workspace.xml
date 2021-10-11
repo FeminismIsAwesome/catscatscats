@@ -39,27 +39,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b77dfc45-72f4-4236-8102-a486caf1dcb1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cat Playmat (1).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/action1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/action1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/action2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/action2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/catnip.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/images/catnip.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/litterbox.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/images/litterbox.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/cats.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/cats.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/cats_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/cats_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/cat.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/cat.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/cats/_card.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cats/_card.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/cats/_cat.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cats/_cat.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/emails/new.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/emails/new.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card back.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cat playmat final 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cats.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cats.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catstrosity (1).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/.~lock.cats.csv#" beforeDir="false" afterPath="$PROJECT_DIR$/config/.~lock.cats.csv#" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/cats.csv" beforeDir="false" afterPath="$PROJECT_DIR$/config/cats.csv" afterDir="false" />
-    </list>
+    <list default="true" id="b77dfc45-72f4-4236-8102-a486caf1dcb1" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -374,6 +354,7 @@
       <workItem from="1633587632765" duration="7984000" />
       <workItem from="1633722644534" duration="1079000" />
       <workItem from="1633739251310" duration="950000" />
+      <workItem from="1633921781686" duration="346000" />
     </task>
     <servers />
   </component>
