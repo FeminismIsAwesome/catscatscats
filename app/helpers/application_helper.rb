@@ -33,7 +33,7 @@ module ApplicationHelper
     line = line.gsub('litterbox', image_tag(asset_path('litterbox.PNG'), class: 'tolerance angry shorten'))
     line = line.gsub('catnip', image_tag(asset_path('catnip.PNG'), class: 'tolerance angry shorten'))
     line = line.gsub('toy', image_tag(asset_path('toy.PNG'), class: 'tolerance angry shorten'))
-    line = line.gsub('food', image_tag(asset_path('food.PNG'), class: 'tolerance angry shorten'))
+    line.gsub('food', image_tag(asset_path('food.PNG'), class: 'tolerance angry shorten'))
     # line.gsub(/[iI]nfluence/, image_tag(asset_path("money")), class: 'tolerance angry shorten')
   end
 
