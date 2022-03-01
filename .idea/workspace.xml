@@ -40,7 +40,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b77dfc45-72f4-4236-8102-a486caf1dcb1" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/app/models/cat_image.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/cats/_action.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/catscatscats.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/catscatscats.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ruby-version" beforeDir="false" afterPath="$PROJECT_DIR$/.ruby-version" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/action1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/action1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/action2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/action2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/cats_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/cats_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/cat.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/cat.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/cats/_card.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cats/_card.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/cats/_cat.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cats/_cat.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/rails" beforeDir="false" afterPath="$PROJECT_DIR$/bin/rails" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/rake" beforeDir="false" afterPath="$PROJECT_DIR$/bin/rake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/spring" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cats.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cats.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/.~lock.cats.csv#" beforeDir="false" afterPath="$PROJECT_DIR$/config/.~lock.cats.csv#" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/cats.csv" beforeDir="false" afterPath="$PROJECT_DIR$/config/cats.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/storage.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/storage.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -357,6 +378,16 @@
       <workItem from="1633722644534" duration="1079000" />
       <workItem from="1633739251310" duration="950000" />
       <workItem from="1633921781686" duration="346000" />
+      <workItem from="1634057381848" duration="36000" />
+      <workItem from="1635461685627" duration="927000" />
+      <workItem from="1636328677737" duration="2545000" />
+      <workItem from="1636332864651" duration="7921000" />
+      <workItem from="1640104961374" duration="263000" />
+      <workItem from="1640105959183" duration="578000" />
+      <workItem from="1640110533831" duration="675000" />
+      <workItem from="1645116285065" duration="1016000" />
+      <workItem from="1645143586274" duration="611000" />
+      <workItem from="1645153278020" duration="2513000" />
     </task>
     <servers />
   </component>
@@ -399,6 +430,14 @@
             <option name="block-ordinal" value="-1" />
           </properties>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/app/views/cats/_card.html.haml</url>
+          <line>5</line>
+          <properties myBlockOrdinal="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

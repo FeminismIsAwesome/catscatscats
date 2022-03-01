@@ -1,16 +1,16 @@
 %table{style: "table-layout: fixed;"}
   %tr
     %td{style: "border-top: 0px; margin-left: 5px;"}
-      %h5.cat-title-v2.cat-shadow.cat-left-align.cat-title-big{style: "width: 200px; text-align: left; background: white; border: 1px solid black; padding: 5px;"}
+      %h5.cat-title-v2.cat-shadow.cat-left-align.cat-title-big{style: "width: 280px; text-align: left; background: white; border: 1px solid black; padding: 5px;"}
         = cat['title']
-    %td{style: "border-top: 0px; padding-left: 10px; padding-right: 0px;"}
-      %div.cat-score.cat-shadow{style: "margin-top: 5px; width: 80px;"}
-        = cat['VP']
-        = image_tag(asset_path("vp.PNG"), class: 'score-counter-img angry shorten')
 %table
   %tr
-    %td{style: "padding-left: 45px;"}
+    %td{style: "padding-left: 10px;"}
       %img.cat-img-8paneled{src: get_tile_image(cat)}
+    %td{style: "padding-left: 20px;"}
+      %div.cat-score.cat-shadow{style: "margin-top: 5px; width: 60px;"}
+        - cat['VP'].to_i.times do
+          = image_tag(asset_path("vp.PNG"), class: 'score-counter-img angry shorten')
 
     -#%td{style: "width: 15%; border-top: 0px;"}
     -#  %div
@@ -18,15 +18,15 @@
     -#      = image_tag('greedv2.PNG', style: "width: 30px;")
     -#      = image_tag('up.jpeg', style: 'width: 30px;')
     -#      !=  get_needs(cat["Number-tr"], true)
-.cat-stats.row
+.cat-stats.row{style:"margin-top: 10px;"}
   .col-2
   .col-8.cat-shadow.trophies{class: "color-#{cat['subtype']}"}
     != render_subtype(cat['subtype'], true)
   .col-2
 .cat-mechanics{style: "margin-top: 10px;"}
   .cat-shadow{style: "margin-left: 15px; width: 220px; float: left;"}
-    Demands:
-    !=  get_needs(cat["Number-tl"], true)
+    Purchase:
+    !=  get_needs(cat["Number-tr"], true)
     %h4.cat-description{style: "margin-top: 5px; font-size: 14px;"}
       - (cat["description"] || "").split("\n").each do |line|
         %div
@@ -34,5 +34,5 @@
     %h7.cat-flavor
       = cat["flavor"]
   .cat-shadow{style: "margin-left: 10px; width: 30px; float: left;"}
-    !=  get_needs(cat["Number-tr"], true)
+    !=  get_needs(cat["Number-tl"], true)
 

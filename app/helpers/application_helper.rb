@@ -16,6 +16,9 @@ module ApplicationHelper
                 "furocious-back.PNG"
               end
       "background-image:url(\"#{image_url(image)}\"); background-size: cover;"
+    elsif cat['type'] == 'action'
+      image = "curious-bg-2.PNG"
+      "background-image:url(\"#{image_url(image)}\"); background-size: cover;"
     else
       ""
     end
@@ -185,6 +188,9 @@ module ApplicationHelper
   end
 
   def get_tile_image(cat)
+    if (cat_image = CatImage.find_by(name: cat['title'])).present?
+     return url_for(cat_image.avatar.variant(:thumb))
+    end
     if cat["SELF"].present?
       image_url(cat["tile_image"])
     else
