@@ -17,7 +17,7 @@ module ApplicationHelper
               end
       "background-image:url(\"#{image_url(image)}\"); background-size: cover;"
     elsif cat['type'] == 'action'
-      image = "curious-bg-2.PNG"
+      image = "action_bg.jpg"
       "background-image:url(\"#{image_url(image)}\"); background-size: cover;"
     else
       ""

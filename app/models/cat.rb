@@ -19,7 +19,7 @@ class Cat
   end
 
   def self.cats
-    Cat.get_cats('normal')
+    get_cats('normal')
   end
 
   def reload_img(name)
@@ -27,20 +27,30 @@ class Cat
     reload_image(cat)
   end
 
-  # wee = CatImage.all.select do |cat_image|
-  #   begin
-  #     cat_image.avatar.variant(:thumb)
-  #     false
-  #   rescue ActiveStorage::InvariableError
-  #     true
-  #   end
-  # end
-  #
-  # Cat.cats.select do |cat|
-  #   cat["tile_image"].include?("data:image")
-  # end.each do |cat|
-  #   Cat.new.reload_image(cat)
-  # end
+  def random
+    wee = CatImage.all.select do |cat_image|
+      begin
+        cat_image.avatar.variant(:thumb)
+        false
+      rescue ActiveStorage::InvariableError
+        true
+      end
+    end
+
+    Cat.cats.select do |cat|
+      cat["tile_image"].include?("data:image")
+    end.each do |cat|
+      Cat.new.reload_image(cat)
+    end
+
+    Cat.cats.reject do |cat|
+      cat["tile_image"].include?("data:image")
+    end.each do |cat|
+      Cat.new.reload_image(cat)
+    end
+  end
+
+
 
   def reload_image(cat)
     image_src = if cat["SELF"].present?
