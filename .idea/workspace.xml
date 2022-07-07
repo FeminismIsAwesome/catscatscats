@@ -39,11 +39,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b77dfc45-72f4-4236-8102-a486caf1dcb1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
-    </list>
+    <list default="true" id="b77dfc45-72f4-4236-8102-a486caf1dcb1" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -379,7 +375,7 @@
       <workItem from="1648850495383" duration="5355000" />
       <workItem from="1652724060284" duration="1690000" />
       <workItem from="1656095990526" duration="772000" />
-      <workItem from="1657175024650" duration="1087000" />
+      <workItem from="1657175024650" duration="1460000" />
     </task>
     <servers />
   </component>
