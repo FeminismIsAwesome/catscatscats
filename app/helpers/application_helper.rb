@@ -28,9 +28,9 @@ module ApplicationHelper
     line = line.gsub(':butthole:', image_tag(asset_path("tolerance.jpeg"), class: 'tolerance'))
     line = line.gsub(/[pP]issed/, image_tag(asset_path("pissedreplace.png"), class: 'tolerance angry'))
     if big_cat
-      line = line.gsub('VP', image_tag(asset_path("vp.PNG"), class: 'big-icon angry shorten'))
+      line = line.gsub('VP', image_tag(asset_path("greedv2.PNG"), class: 'big-icon angry shorten'))
     else
-      line = line.gsub('VP', image_tag(asset_path("vp.PNG"), class: 'tolerance angry shorten'))
+      line = line.gsub('VP', image_tag(asset_path("greedv2.PNG"), class: 'tolerance angry shorten'))
     end
     line = line.gsub(':trophy:', "<i class='fa fa-trophy'></i>")
     line = line.gsub('litterbox', image_tag(asset_path('litterbox.png'), class: 'tolerance angry shorten'))

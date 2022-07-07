@@ -1,4 +1,4 @@
-.cat-card{style: derive_background_image(cat)}
+.rounded.cat-card{style: derive_background_image(cat)}
   - if cat['type'] == 'cat'
     = render partial: 'cats/cat', locals: {cat: cat}
   - elsif cat['type'] == 'action'

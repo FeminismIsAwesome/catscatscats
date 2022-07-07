@@ -464,6 +464,13 @@ body {
   justify-content: center;
 }
 
+.round-me {
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+
 .big-load-icon {
   height: 50px;
   width: 50px;

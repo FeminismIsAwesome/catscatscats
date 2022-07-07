@@ -2,14 +2,15 @@
   %tr.full
     %td.tcol-10
       %h5.cat-title
-        .cat-shadow{style: "text-align: left; margin-left: 5px; margin-top: 5px;"}
+        .cat-shadow{style: "text-align: left; margin-left: 5px; padding-left: 8px; margin-top: 5px;"}
           = action["title"]
-%img.cat-img{src: get_tile_image(action)}
+%img.cat-img.rounded{src: get_tile_image(action)}
 .cat-stats.row
   .col-12.cat-shadow
-    = action['subtype'].upcase
 .cat-mechanics
-  %h4.cat-shadow.cat-description{style: "padding-top: 5px; padding-bottom: 5px; margin-top: 5px; font-size: 14px;"}
+  %h4.cat-shadow.cat-description{style: "padding-top: 5px; padding-bottom: 5px; margin-top: 5px; font-size: 14px; min-height: 120px;"}
+    %div{style: "border-bottom: 2px solid black; padding-bottom: 5px;"}
+      = action['subtype'].upcase
     - (action["description"] || "").split("\n").each do |line|
       %p
         != render_cat_line(line, big_cat: true)
