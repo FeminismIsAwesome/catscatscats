@@ -9,6 +9,9 @@ class EmailsController < ApplicationController
   end
 
   def new
+    redirect_to "https://www.kickstarter.com/projects/winniethekitty/kitty-committee?ref=user_menu"
+    return
+
     @email = Email.new
     cats = Cat.get_cats
     @cats = [cats.find do |cat|

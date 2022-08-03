@@ -290,6 +290,23 @@ class Cat
     Cat.type_distro
   end
 
+  def self.make_image_v3
+    length = Cat.cats.count - 1
+    (0..length).each do |iter|
+      kit = IMGKit.new("http://localhost:3000/cats/printable?offset=#{iter}&limit=1&pad=false", width: 325, height: 430)
+      kit.to_file("card_individual_#{iter}.jpg")
+    end
+    Cat.type_distro
+  end
+
+  def self.make_image_v3_actions
+    length = Cat.cats.count - 1
+    (0..length).each do |iter|
+      kit = IMGKit.new("http://localhost:3000/cats/printable?offset=#{iter}&limit=1&pad=false", width: 325, height: 430)
+      kit.to_file("card_individual_#{iter}.jpg")
+    end
+  end
+
   def self.make_image_v2(rows: 7, columns: 10)
     kit = IMGKit.new("http://localhost:3000/cats/printable?print=cat", width: 325*columns, height: 425*rows)
     kit.to_file("cats.jpg")
