@@ -39,7 +39,28 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b77dfc45-72f4-4236-8102-a486caf1dcb1" name="Default" comment="" />
+    <list default="true" id="b77dfc45-72f4-4236-8102-a486caf1dcb1" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/images/Kitty Committee Demo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/cats.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/cats.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/cat.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/cat.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/cats/_cat.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cats/_cat.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cards0.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cards1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cards11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cards12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cards13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cards14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cards2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cards3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cards4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cards5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cards6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cards7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cards8.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cards9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/cats.csv" beforeDir="false" afterPath="$PROJECT_DIR$/config/cats.csv" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -375,7 +396,16 @@
       <workItem from="1648850495383" duration="5355000" />
       <workItem from="1652724060284" duration="1690000" />
       <workItem from="1656095990526" duration="772000" />
-      <workItem from="1657175024650" duration="1460000" />
+      <workItem from="1657175024650" duration="1683000" />
+      <workItem from="1659037436219" duration="1154000" />
+      <workItem from="1659047370078" duration="613000" />
+      <workItem from="1659489854660" duration="496000" />
+      <workItem from="1659648242653" duration="1276000" />
+      <workItem from="1660859720773" duration="666000" />
+      <workItem from="1660956866330" duration="799000" />
+      <workItem from="1661015492202" duration="422000" />
+      <workItem from="1661180514715" duration="190000" />
+      <workItem from="1667066557459" duration="1807000" />
     </task>
     <servers />
   </component>

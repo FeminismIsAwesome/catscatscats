@@ -201,6 +201,16 @@ class Cat
     end;nil
   end
 
+  def self.cat_value_distro
+    CSV.read(CATS_PATH, headers: true).select do |cat|
+      cat["type"] == 'cat'
+    end.group_by do |cat|
+      cat["VP"]
+    end.each do |cat, value|
+      puts "#{cat} has #{value.count}"
+    end;nil
+  end
+
   def self.action_cost_distro
     CSV.read(CATS_PATH, headers: true).select do |cat|
       cat["type"] == 'action'
@@ -290,14 +300,14 @@ class Cat
     Cat.type_distro
   end
 
-  def self.make_image_v3
-    length = Cat.cats.count - 1
-    (0..length).each do |iter|
-      kit = IMGKit.new("http://localhost:3000/cats/printable?offset=#{iter}&limit=1&pad=false", width: 325, height: 430)
-      kit.to_file("card_individual_#{iter}.jpg")
-    end
-    Cat.type_distro
-  end
+  # def self.make_image_v4
+  #   length = Cat.cats.count - 1
+  #   (0..length).each do |iter|
+  #     kit = IMGKit.new("http://localhost:3000/cats/printable?offset=#{iter}&limit=1&pad=false", width: 325, height: 430)
+  #     kit.to_file("card_individual_#{iter}.jpg")
+  #   end
+  #   Cat.type_distro
+  # end
 
   def self.make_image_v3_actions
     length = Cat.cats.count - 1
